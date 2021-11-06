@@ -1,14 +1,21 @@
 using UnityEngine;
 
-public class Damageable : MonoBehaviour
+namespace Shmup
 {
-    #region Fields and Properties
-    #endregion
-
-    #region Methods
-    private void OnParticleCollision(GameObject other)
+    public abstract class Damageable : MonoBehaviour
     {
-        Debug.Log("Touch me -> " + other.name);
+        #region Fields and Properties
+        [SerializeField] protected int health = 1;
+        [SerializeField] protected SpriteRenderer sprite = null;
+        #endregion
+
+        #region Methods
+        protected abstract void OnTakeDamages();
+
+        private void OnParticleCollision(GameObject other)
+        {
+            OnTakeDamages();
+        }
+        #endregion
     }
-    #endregion
 }
