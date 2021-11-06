@@ -20,14 +20,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  MovementRotationSpeed: 5
+  MovementRotationSpeed: 1
   IdleRotationCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  IdleRotationSpeed: 5
+  IdleRotationSpeed: 1
   MoveInput:
     m_Name: Move Input
     m_Type: 0
