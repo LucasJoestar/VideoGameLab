@@ -262,9 +262,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.34
+    x: 0.30289474
     y: 0
-    width: 0.35
+    width: 0.39421052
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -312,6 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6ecde6fc9cff047865d9be67dcf77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameAspect: 0.7
+  camera: {fileID: 963194227}
 --- !u!1 &2036472247
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2075723925}
   - component: {fileID: 2075723927}
-  - component: {fileID: 2075723926}
   m_Layer: 0
   m_Name: Side Camera
   m_TagString: MainCamera
@@ -376,14 +377,6 @@ Transform:
   m_Father: {fileID: 2036472248}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2075723926
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075723924}
-  m_Enabled: 1
 --- !u!20 &2075723927
 Camera:
   m_ObjectHideFlags: 0
