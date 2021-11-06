@@ -28,16 +28,16 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   IdleRotationSpeed: 5
-  moveInput:
+  MoveInput:
     m_Name: Move Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 64aec03b-2d84-4572-919e-84366b3a04ee
+    m_Id: e8ba8995-d498-4872-9a9d-75cd3ff7f65b
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: 612660d6-4388-402f-a420-f3c0af6ce109
+      m_Id: 1468beb8-06f2-4a33-b2a0-4935f036701a
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -45,7 +45,7 @@ MonoBehaviour:
       m_Action: Move Input
       m_Flags: 4
     - m_Name: up
-      m_Id: 5e49ee9a-3f83-47e4-b3cc-387505d232b3
+      m_Id: f0ae4091-4dda-495e-a0e0-bc5b65ced73d
       m_Path: <Keyboard>/upArrow
       m_Interactions: 
       m_Processors: 
@@ -53,7 +53,7 @@ MonoBehaviour:
       m_Action: Move Input
       m_Flags: 8
     - m_Name: down
-      m_Id: fb34402a-6565-448c-b125-8781f1ec6ce1
+      m_Id: d3d0a9b4-b9c2-4062-8718-708645af309a
       m_Path: <Keyboard>/downArrow
       m_Interactions: 
       m_Processors: 
@@ -61,7 +61,7 @@ MonoBehaviour:
       m_Action: Move Input
       m_Flags: 8
     - m_Name: left
-      m_Id: 23581f76-200a-40ef-8af4-33484a388b0a
+      m_Id: 8c31bc27-6169-49b2-9c1d-0c3409680a8f
       m_Path: <Keyboard>/leftArrow
       m_Interactions: 
       m_Processors: 
@@ -69,34 +69,58 @@ MonoBehaviour:
       m_Action: Move Input
       m_Flags: 8
     - m_Name: right
-      m_Id: 4a7bba57-aa36-42c1-b8b9-791d0a57edc8
+      m_Id: a6f5ddc3-d32b-4e48-a97b-5249f734e50e
       m_Path: <Keyboard>/rightArrow
       m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Move Input
       m_Flags: 8
-  fireMainInput:
+    - m_Name: 
+      m_Id: 8dfcd218-21d0-48a7-a2b3-83dfa4c63a3e
+      m_Path: <Joystick>/stick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 2ef146f1-88f9-44e5-ab92-2da936cacf5e
+      m_Path: <Gamepad>/dpad
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9ae65163-95f9-4c95-b958-6fa04f808e0c
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move Input
+      m_Flags: 0
+  FireMainInput:
     m_Name: Fire Main Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: d022611f-06a7-4c2b-aaef-4e0e5424f0d5
+    m_Id: 9dbe6091-75c7-4562-a3ac-6892ad9967cd
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
-  fireSecondaryInput:
+  FireSecondaryInput:
     m_Name: Fire Secondary Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 5674a1ed-d477-4c7e-a86d-9e24f7683327
+    m_Id: 627dbad1-0d9c-400a-aeca-7b98229cf6a3
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
-  fireBombInput:
+  FireBombInput:
     m_Name: Fire Bomb Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3aa07de9-b007-4e76-b838-51879236ed14
+    m_Id: 38113754-5c49-489d-84a2-85f8a771eaa5
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []

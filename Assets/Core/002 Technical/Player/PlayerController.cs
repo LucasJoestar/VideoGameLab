@@ -5,7 +5,6 @@
 // ================================================================================== //
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Shmup
 {
