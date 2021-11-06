@@ -31,6 +31,7 @@ namespace Shmup
                 {
                     disabledComponents[i].enabled = false;
                 }
+                ScoreManager.Instance.IncreaseScore(score);
             }
             sequence.Play();
         }

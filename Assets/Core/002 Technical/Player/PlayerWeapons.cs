@@ -7,7 +7,6 @@ namespace Shmup
         #region Fields and Properties
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
-        public bool IsAutoFiring => isAutoFiring;
         #endregion
 
         #region Methods
