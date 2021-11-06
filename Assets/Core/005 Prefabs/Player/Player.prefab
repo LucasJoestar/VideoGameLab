@@ -44,13 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86cde2556ebd2c46ad3d6246104616d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsData: {fileID: 0}
+  weaponsData: {fileID: 11400000, guid: d1372d045534ab74eb612965b1040caa, type: 2}
   targetMask:
     serializedVersion: 2
     m_Bits: 512
   weaponsAnchor:
   - {fileID: 2587117854211957257}
-  debug: 0
   useAutoFire: 0
 --- !u!1 &3534583059149761552
 GameObject:
@@ -164,7 +163,6 @@ MonoBehaviour:
   weaponsAnchor:
   - {fileID: 735029567180456907}
   - {fileID: 7420662107188252988}
-  debug: 0
   useAutoFire: 1
 --- !u!1 &6276411794234093914
 GameObject:
@@ -240,13 +238,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112ac374767719468199826c6254ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponsData: {fileID: 0}
+  weaponsData: {fileID: 11400000, guid: d1372d045534ab74eb612965b1040caa, type: 2}
   targetMask:
     serializedVersion: 2
     m_Bits: 512
   weaponsAnchor:
   - {fileID: 2843384488871631666}
-  debug: 0
   collider: {fileID: 0}
 --- !u!1 &8528006561433980542
 GameObject:
@@ -400,9 +397,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 8528006561433980543}
-  collider: {fileID: 0}
-  hasShield: 0
+  collider: {fileID: 8528006561433980514}
+  disabledComponents:
+  - {fileID: 2686530028997403946}
+  - {fileID: 1510736481711061424}
+  - {fileID: 2570395333086081920}
+  blinkLoopCount: 8
   explosion: {fileID: 0}
+  hasShield: 1
 --- !u!1 &9116731329453495198
 GameObject:
   m_ObjectHideFlags: 0
