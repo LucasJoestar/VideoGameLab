@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e689a56f4153fa245b3f63d1365be78e, type: 3}
+  m_Name: GameMenusAttributes
+  m_EditorClassIdentifier: 
+  OpenBackgroundOriginalPos: -500
+  OpenBackgroundDestinationPos: 0
+  OpenBackgroundMovementDuration: 0.2
+  OpenBackgroundMovementEase: 3
+  OpenTitleOriginalPos: 450
+  OpenTitleDestinationPos: 0
+  OpenTitleDelay: 0.3
+  OpenTitleMovementDuration: 0.2
+  OpenTitleMovementEase: 6
+  OpenFlashDelay: 0.55
+  CloseDuration: 0.2
+  CloseEase: 5
+  CloseFlashDelay: 0.25
+  FlashStretchDuration: 0.1
+  FlashStretchEase: 5
+  FlashFadeDuration: 0.08
+  FlashFadeEase: 2
+  OpenMenuInput:
+    m_Name: Open Menu Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 60a31232-c91e-43c0-8797-838382ebba73
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: a269a33c-f3ca-450c-bf01-20f6cbbe7ba0
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Open Menu Input
+      m_Flags: 0

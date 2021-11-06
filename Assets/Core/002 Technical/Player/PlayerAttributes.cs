@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 
 namespace Shmup
 {
-    [CreateAssetMenu(fileName = "PlayerAttributes", menuName = "SHMUP/Player Attributes", order = 200)]
+    [CreateAssetMenu(fileName = "PlayerAttributes", menuName = "SHMUP/Player Attributes", order = 250)]
     public class PlayerAttributes : ScriptableObject
     {
         #region Global Members

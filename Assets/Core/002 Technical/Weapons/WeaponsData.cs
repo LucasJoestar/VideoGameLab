@@ -8,4 +8,6 @@ public class WeaponsData : ScriptableObject
     [SerializeField] private ParticleSystem projectiles;
     public ParticleSystem Projectiles => projectiles;
 
+    [SerializeField] private int damages = 1;
+    public int Damages => damages;
 }

@@ -11,8 +11,11 @@ namespace Shmup
     public class CameraAspectRatio : MonoBehaviour
     {
         #region Global Members
+        public static CameraAspectRatio Instance = null; 
+        
         [SerializeField, Range(.1f, 1f)] private float gameAspect = .8f / 3f;
         [SerializeField] private new Camera camera = null;
+        public Camera Camera => camera; 
 
         private float lastAspect = 1f;
 
@@ -53,6 +56,18 @@ namespace Shmup
                 };
 
                 camera.rect = _rect;
+            }
+        }
+
+        private void Awake()
+        {
+            if(Instance == null)
+            {
+                Instance = this; 
+            }
+            else
+            {
+                Destroy(this); 
             }
         }
         #endregion
