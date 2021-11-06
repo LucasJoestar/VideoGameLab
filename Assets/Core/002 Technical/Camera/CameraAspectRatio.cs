@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Shmup
 {
-    public class CameraRatio : MonoBehaviour
+    public class CameraAspectRatio : MonoBehaviour
     {
         #region Global Members
         [SerializeField, Range(.1f, 1f)] private float gameAspect = .8f / 3f;
