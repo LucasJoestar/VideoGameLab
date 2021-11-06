@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2356426971507562833
 Transform:
   m_ObjectHideFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
     m_Bits: 512
   weaponsAnchor:
   - {fileID: 2587117854211957257}
+  debug: 0
   useAutoFire: 0
 --- !u!1 &3534583059149761552
 GameObject:
@@ -74,13 +75,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3534583059149761552}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.25, y: 0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426553154492737235}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &5101222237215539168
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,13 +105,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101222237215539168}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.25, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426553154492737235}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &5422796364650235506
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +164,7 @@ MonoBehaviour:
   weaponsAnchor:
   - {fileID: 735029567180456907}
   - {fileID: 7420662107188252988}
+  debug: 0
   useAutoFire: 1
 --- !u!1 &6276411794234093914
 GameObject:
@@ -210,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4866587866498650464
 Transform:
   m_ObjectHideFlags: 0
@@ -244,6 +246,7 @@ MonoBehaviour:
     m_Bits: 512
   weaponsAnchor:
   - {fileID: 2843384488871631666}
+  debug: 0
   collider: {fileID: 0}
 --- !u!1 &8528006561433980542
 GameObject:
@@ -397,6 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 8528006561433980543}
+  collider: {fileID: 0}
+  hasShield: 0
   explosion: {fileID: 0}
 --- !u!1 &9116731329453495198
 GameObject:

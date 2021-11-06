@@ -11,6 +11,7 @@ namespace Shmup
         [SerializeField] private LayerMask targetMask = new LayerMask();
         [SerializeField] private Transform[] weaponsAnchor = new Transform[] { };
         protected ParticleSystem[] systems = new ParticleSystem[] { };
+        public WeaponsData WeaponsData => weaponsData; 
         #endregion
 
         #region Methods
@@ -36,6 +37,17 @@ namespace Shmup
         private void Awake()
         {
             Init();
+        }
+
+        private void OnDisable()
+        {
+            if(Application.isPlaying)
+            {
+                for (int i = 0; i < systems.Length; i++)
+                {
+                    systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
+            }
         }
         #endregion 
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7733127150088848255}
   - component: {fileID: 4752526439704594728}
   - component: {fileID: 1709601813287154233}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4815,7 +4815,7 @@ GameObject:
   - component: {fileID: 7186585937175200007}
   - component: {fileID: 7186585937175200056}
   - component: {fileID: 7186585937175200057}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Basic Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9563,7 +9563,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
