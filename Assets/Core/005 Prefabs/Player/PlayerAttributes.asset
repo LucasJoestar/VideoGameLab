@@ -103,11 +103,19 @@ MonoBehaviour:
   FireMainInput:
     m_Name: Fire Main Input
     m_Type: 0
-    m_ExpectedControlType: 
+    m_ExpectedControlType: Button
     m_Id: 9dbe6091-75c7-4562-a3ac-6892ad9967cd
     m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c4aaf3f4-38c6-48c0-aeb2-c07933f26086
+      m_Path: <Keyboard>/q
+      m_Interactions: Press(behavior=2)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0
   FireSecondaryInput:
     m_Name: Fire Secondary Input
     m_Type: 0

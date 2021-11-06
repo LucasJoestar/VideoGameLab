@@ -1,5 +1,118 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3534583059149761552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7420662107188252988}
+  m_Layer: 8
+  m_Name: Anchor #2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7420662107188252988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3534583059149761552}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.25, y: 0.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426553154492737235}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &5101222237215539168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735029567180456907}
+  m_Layer: 8
+  m_Name: Anchor #1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &735029567180456907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101222237215539168}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.25, y: -0.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 426553154492737235}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &5422796364650235506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426553154492737235}
+  - component: {fileID: 5734554328095689416}
+  m_Layer: 8
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426553154492737235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422796364650235506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 735029567180456907}
+  - {fileID: 7420662107188252988}
+  m_Father: {fileID: 8528006561433980540}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5734554328095689416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422796364650235506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c229385713b769438f011919723b3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponsData: {fileID: 11400000, guid: d1372d045534ab74eb612965b1040caa, type: 2}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
+  weaponsAnchor:
+  - {fileID: 735029567180456907}
+  - {fileID: 7420662107188252988}
+  useAutoFire: 1
 --- !u!1 &8528006561433980542
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +143,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.007, y: -4.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 426553154492737235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -100,81 +214,10 @@ MonoBehaviour:
   attributes: {fileID: 11400000, guid: e21f381bd12413f45908ecbdcd8bc140, type: 2}
   rigidbody: {fileID: 8528006561433980541}
   collider: {fileID: 8528006561433980514}
+  mainWeapons: {fileID: 5734554328095689416}
   collisionMask:
     serializedVersion: 2
     m_Bits: 128
-  moveInput:
-    m_Name: Move Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 64aec03b-2d84-4572-919e-84366b3a04ee
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 2D Vector
-      m_Id: 612660d6-4388-402f-a420-f3c0af6ce109
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 5e49ee9a-3f83-47e4-b3cc-387505d232b3
-      m_Path: <Keyboard>/upArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-    - m_Name: down
-      m_Id: fb34402a-6565-448c-b125-8781f1ec6ce1
-      m_Path: <Keyboard>/downArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 23581f76-200a-40ef-8af4-33484a388b0a
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 4a7bba57-aa36-42c1-b8b9-791d0a57edc8
-      m_Path: <Keyboard>/rightArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move Input
-      m_Flags: 8
-  fireMainInput:
-    m_Name: Fire Main Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5525a380-b6ff-47ff-aada-92c3e2890cb5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  fireSecondaryInput:
-    m_Name: Fire Secondary Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: fbe42002-04e4-4384-b347-f5d4b3d09b73
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-  fireBombInput:
-    m_Name: Fire Bomb Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 88f89d5c-3a9b-444c-953d-1ac38d1486e5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
 --- !u!54 &8528006561433980541
 Rigidbody:
   m_ObjectHideFlags: 0

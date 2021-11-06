@@ -16,7 +16,7 @@ namespace Shmup
         [SerializeField] private PlayerAttributes attributes = null;
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private new SphereCollider collider = null;
-
+        [SerializeField] private Weapons mainWeapons = null; 
         [Space(5f)]
 
         [SerializeField] private LayerMask collisionMask = new LayerMask();
@@ -30,6 +30,10 @@ namespace Shmup
             {
                 _movement *= attributes.Speed * Time.smoothDeltaTime;
                 Move(_movement);
+            }
+            if(attributes.FireMainInput.triggered)
+            {
+                mainWeapons.Fire();
             }
         }
         #endregion
