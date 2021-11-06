@@ -11,6 +11,8 @@ namespace Shmup
 
         [Header("Feedbacks")]
         [SerializeField, Range(1, 10)] protected int blinkLoopCount = 8;
+        [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f; 
+        public float UniqueBlinkDuration { get { return blinkDuration / (blinkLoopCount * 2); } }
         [Header("Resources")]
         [SerializeField] protected ParticleSystem explosion = null;
         #endregion

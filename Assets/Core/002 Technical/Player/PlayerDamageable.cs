@@ -19,7 +19,7 @@ namespace Shmup
             // Player Blinking
             collider.enabled = false; 
             _sequence.Join(CameraAspectRatio.Instance.Camera.transform.DOShakePosition(0.05f * blinkLoopCount * 2, .15f)) ;
-            _sequence.Join(sprite.DOFade(0.0f, .05f).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
+            _sequence.Join(sprite.DOFade(0.0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
             _sequence.OnComplete(() => collider.enabled = true); 
 
             if(hasShield)
