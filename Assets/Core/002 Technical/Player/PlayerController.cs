@@ -16,7 +16,9 @@ namespace Shmup
         [SerializeField] private PlayerAttributes attributes = null;
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private new SphereCollider collider = null;
-        [SerializeField] private Weapons mainWeapons = null; 
+        [SerializeField] private Weapons mainWeapons = null;
+        [SerializeField] private Weapons secondaryWeapon = null;
+        [SerializeField] private Bomb bomb = null;
         [Space(5f)]
 
         [SerializeField] private LayerMask collisionMask = new LayerMask();

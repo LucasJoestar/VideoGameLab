@@ -7,5 +7,4 @@ public class WeaponsData : ScriptableObject
 {
     [SerializeField] private ParticleSystem projectiles;
     public ParticleSystem Projectiles => projectiles;
-
 }

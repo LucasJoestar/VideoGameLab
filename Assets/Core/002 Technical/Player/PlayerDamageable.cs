@@ -12,7 +12,7 @@ namespace Shmup
         #endregion
 
         #region Methods
-        protected override void OnTakeDamages()
+        protected override void OnTakeDamages(int _damages)
         {
             // Si shield > Destruction shield 
 
