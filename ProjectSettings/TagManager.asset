@@ -8,15 +8,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - Editor
   - Water
   - UI
-  - Projectile
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - Bounds
+  - Player
+  - Enemy
+  - P_Fire
+  - E_Fire
   - 
   - 
   - 
