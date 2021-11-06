@@ -6,7 +6,8 @@ namespace Shmup
     public class EnemyDamageable : Damageable
     {
         #region Fields and Properties
-        [SerializeField] private int health = 1;
+        [SerializeField] private int maxHealth = 100;
+        [SerializeField] private int health = 0; 
         [SerializeField] private int score = 100;
         #endregion
 
@@ -16,23 +17,27 @@ namespace Shmup
         {
             if(sequence.IsActive())
             {
-                sequence.Kill(); 
+                sequence.Complete(); 
             }
             sequence = DOTween.Sequence();
             // Blinking
-            sequence.Join(sprite.DOFade(0.0f, .05f).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
+            sequence.Join(sprite.DOFade(0.0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
 
             health -= _damages; 
-            if(health < 0)
+            if(health <= 0)
             {
                 // Emit explosion vfx
-                sequence.OnComplete(() => Destroy(gameObject));
                 for (int i = 0; i < disabledComponents.Length; i++)
                 {
                     disabledComponents[i].enabled = false;
                 }
             }
             sequence.Play();
+        }
+
+        private void Awake()
+        {
+            health = maxHealth; 
         }
         #endregion
     }

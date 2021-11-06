@@ -31,6 +31,7 @@ namespace Shmup
             for (int i = 0; i < systems.Length; i++)
             {
                 systems[i].Play();
+                // systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting); 
             }
         }
 
