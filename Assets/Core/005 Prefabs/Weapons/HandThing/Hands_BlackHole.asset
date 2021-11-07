@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
   m_Name: Hands_BlackHole
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 0}
-  damages: 1
+  projectiles: {fileID: 2800799037082488572, guid: 4e7591eb17dabd540b25a211b1672519, type: 3}
+  damages: 10
+  fireRate: 1
+  fireClips:
+  - {fileID: 8300000, guid: 997eb869c45cd1c4283543752db63a95, type: 3}
+  volumeScale: 0.55

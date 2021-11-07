@@ -14530,6 +14530,25 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &1987053929
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590048442766318303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe91995452b5af142bd6995c6f7ccf64, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!54 &952149807104138679
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14572,25 +14591,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageable: {fileID: 5590048442766318288}
---- !u!95 &1987053929
-Animator:
-  serializedVersion: 3
+--- !u!135 &5691779714210247510
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5590048442766318303}
+  m_GameObject: {fileID: 4708110347888052456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe91995452b5af142bd6995c6f7ccf64, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1121085861836671260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14598,6 +14611,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1147529379881629310, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4764019876357673921, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14644,7 +14661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4764019876357673923, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
       propertyPath: m_Name
-      value: 'HandThing '
+      value: HandThing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764019876357673923, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4764019876357673932, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
       propertyPath: sprites.Array.size
@@ -14704,6 +14725,11 @@ MonoBehaviour:
 --- !u!1 &1292058282902970958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2188949046447876946, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+  m_PrefabInstance: {fileID: 1121085861836671260}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4708110347888052456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5681419351535223284, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
   m_PrefabInstance: {fileID: 1121085861836671260}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &4965241493002271355 stripped

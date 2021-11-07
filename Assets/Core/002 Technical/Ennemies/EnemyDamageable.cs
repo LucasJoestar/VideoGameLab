@@ -16,6 +16,21 @@ namespace Shmup
         #endregion
 
         #region Methods
+        protected override void OnTakeDamages()
+        {
+            base.OnTakeDamages();
+
+            // Blinking
+            if (!sequence.IsActive())
+            {
+                sequence = DOTween.Sequence();
+                foreach (var _s in sprites)
+                {
+                    sequence.Join(_s.material.DOFade(1f, blinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
+                }
+            }
+        }
+
         protected override void OnDestroyed()
         {
             base.OnDestroyed();

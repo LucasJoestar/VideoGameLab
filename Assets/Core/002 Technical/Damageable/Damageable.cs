@@ -27,7 +27,7 @@ namespace Shmup
         [SerializeField] protected PoolableParticle explosion = null;
         [SerializeField] protected AudioClip[] explosionClips = new AudioClip[] { }; 
         [SerializeField, Range(1, 10)] protected int blinkLoopCount = 8;
-        [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f; 
+        [SerializeField, Range(0f, 3.0f)] protected float blinkDuration = .1f; 
 
         public float UniqueBlinkDuration => blinkDuration / (blinkLoopCount * 2);
 
@@ -54,15 +54,7 @@ namespace Shmup
 
         protected virtual void OnTakeDamages()
         {
-            // Blinking
-            if (!sequence.IsActive())
-            {
-                sequence = DOTween.Sequence();
-                foreach (var _s in sprites)
-                {
-                    sequence.Join(_s.DOFade(0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
-                }
-            }
+            
         }
 
         protected virtual void OnDestroyed()
