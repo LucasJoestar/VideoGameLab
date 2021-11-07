@@ -27,7 +27,8 @@ namespace Shmup
         [SerializeField] protected PoolableParticle explosion = null;
         [SerializeField] protected AudioClip[] explosionClips = new AudioClip[] { }; 
         [SerializeField, Range(1, 10)] protected int blinkLoopCount = 8;
-        [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f; 
+        [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f;
+        [SerializeField] private Transform[] explosionPoints = new Transform[] { };
 
         public float UniqueBlinkDuration => blinkDuration / (blinkLoopCount * 2);
 
@@ -68,8 +69,19 @@ namespace Shmup
         protected virtual void OnDestroyed()
         {
             // Emit explosion vfx
-            var _explosion = explosionPool.GetFromPool(explosion);
-            _explosion.transform.position = transform.position;
+            if(explosionPoints.Length > 0)
+            {
+                for (int i = 0; i < explosionPoints.Length; i++)
+                {
+                    var _explosion = explosionPool.GetFromPool(explosion);
+                    _explosion.transform.position = explosionPoints[i].position;
+                }
+            }
+            else
+            {
+                var _explosion = explosionPool.GetFromPool(explosion);
+                _explosion.transform.position = transform.position;
+            }
             if(explosionClips.Length > 0)
                 SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0,explosionClips.Length-1)],transform.position);
 
