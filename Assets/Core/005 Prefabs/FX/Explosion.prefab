@@ -4920,8 +4920,8 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 3
-    scalar: 0.75
-    minScalar: 0.1
+    scalar: 0.1
+    minScalar: 0
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -8725,10 +8725,15 @@ ParticleSystem:
     primitives: []
   SubModule:
     serializedVersion: 2
-    enabled: 0
+    enabled: 1
     subEmitters:
     - serializedVersion: 3
-      emitter: {fileID: 0}
+      emitter: {fileID: 1761260757655057574}
+      type: 0
+      properties: 0
+      emitProbability: 1
+    - serializedVersion: 3
+      emitter: {fileID: 1761260756952748751}
       type: 0
       properties: 0
       emitProbability: 1

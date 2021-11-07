@@ -13,6 +13,7 @@ namespace Shmup
     {
         #region Damages
         [SerializeField] protected new Collider collider = null;
+        [SerializeField] private ParticleSystem shield = null;
         private bool hasShield = false;
 
         // -----------------------
@@ -24,6 +25,7 @@ namespace Shmup
             {
                 _damages = 0;
                 hasShield = false;
+                shield.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
             }
 
             bool _isDead = base.TakeDamages(_damages);
@@ -54,8 +56,6 @@ namespace Shmup
                     sequence.Join(_s.DOFade(0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
                 }
             }
-
-            // Destroy shield.
         }
 
         protected override void OnDestroyed()
@@ -69,8 +69,8 @@ namespace Shmup
             if (!hasShield)
             {
                 hasShield = true;
-
                 // Instantiate shield.
+                shield.Play();
             }
         }
         #endregion

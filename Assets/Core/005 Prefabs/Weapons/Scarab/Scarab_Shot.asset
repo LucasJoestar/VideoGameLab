@@ -12,5 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
   m_Name: Scarab_Shot
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 0}
-  damages: 1
+  projectiles: {fileID: 7448092653999706605, guid: 8f9a0f4bf1ed50b4fa43d647826b0231, type: 3}
+  damages: 5
+  fireRate: 0.75
+  fireClips:
+  - {fileID: 8300000, guid: 22928c128ef410549912fc4fd3e949a5, type: 3}
+  - {fileID: 8300000, guid: 3ea6feb1737189044adc50ceb133e365, type: 3}
+  - {fileID: 8300000, guid: b8eb17422d16cc44faf14d238f62ed4d, type: 3}
+  - {fileID: 8300000, guid: fa71db6039d0f4c4bb14f9f88059605f, type: 3}
+  - {fileID: 8300000, guid: d2b62b497df1c0f4cb62a33fa6b6983a, type: 3}
+  collidingAudioClip: {fileID: 0}
+  volumeScale: 0.5
+  weaponSprite: {fileID: -6287787046888575383, guid: ac2354991f4e1014b880ec1ab59c0116, type: 3}
+  ammo: 10

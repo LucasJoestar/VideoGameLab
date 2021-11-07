@@ -7,17 +7,15 @@ namespace Shmup
     {
         #region Fields and Properties
         [SerializeField] private Weapons[] patterns = new Weapons[] { };
-        private int patternIndex = 0;
+        [SerializeField] private int patternIndex = 0;
         #endregion
 
         #region Methods
         public override void Activate()
         {
-            /*
             weapons = patterns[patternIndex];
             base.Activate();
-            patternIndex = patternIndex++ >= patterns.Length ? patternIndex : 0;
-            */
+            patternIndex = patternIndex++ < patterns.Length -1 ? patternIndex : 0;
         }
         #endregion
     }

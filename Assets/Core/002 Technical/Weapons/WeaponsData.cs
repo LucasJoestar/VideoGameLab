@@ -16,11 +16,19 @@ namespace Shmup
         [SerializeField,Range(.1f, 20)] private float fireRate = 1.0f;
 
         [SerializeField] private AudioClip[] fireClips = new AudioClip[] { };
+        [SerializeField] private AudioClip collidingAudioClip = null;
         [SerializeField, Range(.1f, 1.0f)] private float volumeScale = 1.0f;
+        public AudioClip CollidingAudioClip => collidingAudioClip;
         public float VolumeScale => volumeScale;
 
         public int Damages => damages;
         public float FireRateTime { get { return 1 / fireRate; }}
+
+        [Header("Player")]
+        [SerializeField] private Sprite weaponSprite = null;
+        public Sprite WeaponSprite => weaponSprite;
+        [SerializeField] private int ammo = 10;
+        public int Ammo => ammo;
 
         public Pool<PoolableParticle> Pool = new Pool<PoolableParticle>(2);
 

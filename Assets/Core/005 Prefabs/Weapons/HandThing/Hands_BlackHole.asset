@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles: {fileID: 2800799037082488572, guid: 4e7591eb17dabd540b25a211b1672519, type: 3}
   damages: 10
-  fireRate: 1
+  fireRate: 0.5
   fireClips:
-  - {fileID: 8300000, guid: 997eb869c45cd1c4283543752db63a95, type: 3}
-  volumeScale: 0.55
+  - {fileID: 8300000, guid: ea843083cd50f1f49ad2cdef60b87766, type: 3}
+  - {fileID: 8300000, guid: 6f01d1fe8bba2674bacc2b293504f6f4, type: 3}
+  - {fileID: 8300000, guid: 77153d70a1e548c469d2148aa48031bf, type: 3}
+  collidingAudioClip: {fileID: 8300000, guid: 1acb1cba1754cef41853660d1f8cd701, type: 3}
+  volumeScale: 0.4
+  weaponSprite: {fileID: -4709456396536258026, guid: ac2354991f4e1014b880ec1ab59c0116, type: 3}
+  ammo: 10

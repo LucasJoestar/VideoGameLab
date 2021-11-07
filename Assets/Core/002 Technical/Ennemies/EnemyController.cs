@@ -31,7 +31,8 @@ namespace Shmup
             sequence.OnComplete(() => damageable.TakeDamages(_bombDamages));
             sequence.Play();
 
-            weapons.CancelFire();
+            if(weapons != null)
+                weapons.CancelFire();
         }
 
 
