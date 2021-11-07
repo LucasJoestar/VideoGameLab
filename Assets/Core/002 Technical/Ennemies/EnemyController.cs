@@ -43,6 +43,14 @@ namespace Shmup
             }
         }
 
+        private void OnBecameVisible()
+        {
+            // if(Application.isPlaying)
+            // {
+            //     Activate();
+            // } 
+        }
+
         private void OnDisable()
         {
             if(sequence.IsActive())

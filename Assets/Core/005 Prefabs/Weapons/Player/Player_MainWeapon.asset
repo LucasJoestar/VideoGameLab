@@ -14,3 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles: {fileID: 5163052688534378751, guid: 6bd2121ec32eed64c8431b4d6fc40031, type: 3}
   damages: 10
+  fireRate: 1
+  fireClips:
+  - {fileID: 8300000, guid: 35d10f8901e85b749946f61d58fd8b03, type: 3}
+  - {fileID: 8300000, guid: 44ae23d6bceaf6940833a4453ae7e1d3, type: 3}
+  - {fileID: 8300000, guid: 45656857d9ddd1b46b77df992286bd3f, type: 3}
+  - {fileID: 8300000, guid: 5694c9e8892daf042b23a93ad2c9b332, type: 3}
+  - {fileID: 8300000, guid: cffed96d720f258498a1cb35bf9e181e, type: 3}
+  - {fileID: 8300000, guid: b27264303ae81e249b444849d7ba3850, type: 3}
+  - {fileID: 8300000, guid: ba762d63ff0b07542bcfb8af604f802e, type: 3}
+  - {fileID: 8300000, guid: 39728cba2efdbdd40ac86833ac9cc1e6, type: 3}
+  - {fileID: 8300000, guid: 3a28c62dc6f4e8d46adeb7fdd8bc4b51, type: 3}
+  - {fileID: 8300000, guid: 704efd5535edb8f4a9ca713d66f3a7f7, type: 3}
+  - {fileID: 8300000, guid: 08ce72e9c51341b4fa8ddf5b015c0f2b, type: 3}
+  - {fileID: 8300000, guid: ed9d0ee368e06ea4dbe5c50f8a11a5e2, type: 3}
+  volumeScale: 1
