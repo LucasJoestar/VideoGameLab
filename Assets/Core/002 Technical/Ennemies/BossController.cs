@@ -13,9 +13,11 @@ namespace Shmup
         #region Methods
         public override void Activate()
         {
+            /*
             weapons = patterns[patternIndex];
             base.Activate();
             patternIndex = patternIndex++ >= patterns.Length ? patternIndex : 0;
+            */
         }
         #endregion
     }

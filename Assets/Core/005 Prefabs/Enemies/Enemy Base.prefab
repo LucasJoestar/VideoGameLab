@@ -89,7 +89,7 @@ MonoBehaviour:
   explosionClips:
   - {fileID: 8300000, guid: 7d8b44746b060864c9129cb52bd2cb29, type: 3}
   blinkLoopCount: 6
-  blinkDuration: 0.1
+  blinkDuration: 0.05
   score: 100
 --- !u!114 &1218449924995442145
 MonoBehaviour:
