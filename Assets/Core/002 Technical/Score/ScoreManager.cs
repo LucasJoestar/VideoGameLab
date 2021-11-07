@@ -20,17 +20,20 @@ namespace Shmup
         {
             lastScore += _increasingValue;
             totalScore += _increasingValue;
-            float _ratio = (float)lastScore / (float)upgrades[currentUpdateIndex].ScoreThreshold; 
-            if(_ratio >= 1)
+            float _ratio = (float)lastScore / (float)upgrades[upgrades.Length - 1].ScoreThreshold;
+            while (_ratio > 1)
             {
-                // Get Upgrade
+                currentUpdateIndex++;
+                if (currentUpdateIndex >= upgrades.Length)
+                    break;
+                _ratio = (float)lastScore / (float)upgrades[upgrades.Length -1].ScoreThreshold;
             }
             ui.UpdateScoreUI(totalScore, _ratio);
         }
 
         private void Awake()
         {
-            if (Instance = null)
+            if (Instance == null)
             {
                 Instance = this; 
             }
