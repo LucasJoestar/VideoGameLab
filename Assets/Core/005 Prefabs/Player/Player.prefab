@@ -14829,7 +14829,7 @@ MonoBehaviour:
   damageable: {fileID: 7019414584344825113}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 8321
 --- !u!54 &8528006561433980541
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4919,9 +4919,9 @@ ParticleSystem:
   useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
-    minMaxState: 0
-    scalar: 0
-    minScalar: 0
+    minMaxState: 3
+    scalar: 0.75
+    minScalar: 0.1
     maxCurve:
       serializedVersion: 2
       m_Curve:
@@ -9741,6 +9741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainParticles: {fileID: 1761260757366739703}
   IsInPool: 0
+  SendToPoolOnInvisible: 0
 --- !u!1 &1761260757655057573
 GameObject:
   m_ObjectHideFlags: 0
