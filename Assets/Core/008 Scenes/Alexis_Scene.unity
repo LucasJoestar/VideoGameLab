@@ -674,6 +674,50 @@ PrefabInstance:
       propertyPath: weaponsData
       value: 
       objectReference: {fileID: 11400000, guid: e15af349817954e41be1ea23d6f3c16f, type: 2}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashImage
+      value: 
+      objectReference: {fileID: 1523413014}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].value
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].inSlope
+      value: -0.008173222
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].outSlope
+      value: -0.008173222
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashCurve.m_Curve.Array.data[1].outWeight
+      value: 0.11542845
+      objectReference: {fileID: 0}
     - target: {fileID: 7019414584344825113, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
       propertyPath: controller
       value: 
@@ -1012,6 +1056,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 934174891, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 546403654263537742, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -1804,6 +1852,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 359177359, guid: 31687573c981cd149926c29fc75e010f, type: 3}
   m_PrefabInstance: {fileID: 846310377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1523413014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934174891, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
+  m_PrefabInstance: {fileID: 1028928014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1705296436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1141876610, guid: 31687573c981cd149926c29fc75e010f, type: 3}
