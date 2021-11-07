@@ -2,29 +2,61 @@ using UnityEngine;
 
 public class BasicController : MonoBehaviour
 {
-        [SerializeField]
-    GameObject SecondaryWeaponPrefab;
-        [SerializeField]
-    GameObject firePoint;
-    GameObject spawnedLaser;
+    [SerializeField]
+    GameObject primaryWeaponPrefab;
+    [SerializeField]
+    GameObject secondaryWeaponPrefab;
+    [SerializeField]
+    GameObject primaryFirePoint;
+    [SerializeField]
+    GameObject secondaryFirePoint;
+
+    GameObject spawnedPrimary;
+    GameObject spawnedSecondary;
 
 
-    void DisableLaser()
+
+
+
+    void DisablePrimary()
     {
-        spawnedLaser.SetActive(false);
+        spawnedPrimary.SetActive(false);
     }
 
-    void EnableLaser()
+    void EnablePrimary()
     {
-        spawnedLaser.SetActive(true);
+        spawnedPrimary.SetActive(true);
+    }
+
+
+    void UpdatePrimary()
+    {
+        if (primaryFirePoint != null)
+        {
+            spawnedPrimary.transform.position = primaryFirePoint.transform.position;
+        }
+    }
+
+
+
+
+
+    void DisableSecondary()
+    {
+        spawnedSecondary.SetActive(false);
+    }
+
+    void EnableSecondary()
+    {
+        spawnedSecondary.SetActive(true);
     }
     
 
-    void UpdateLaser()
+    void UpdateSecondary()
     {
-        if(firePoint != null)
+        if(secondaryFirePoint != null)
         {
-            spawnedLaser.transform.position = firePoint.transform.position;
+            spawnedSecondary.transform.position = secondaryFirePoint.transform.position;
         }
     }
 
@@ -32,23 +64,37 @@ public class BasicController : MonoBehaviour
 
     void Start()
     {
-        spawnedLaser = Instantiate(SecondaryWeaponPrefab, firePoint.transform) as GameObject;
-        DisableLaser();
+        spawnedSecondary = Instantiate(secondaryWeaponPrefab, secondaryFirePoint.transform) as GameObject;
+        spawnedPrimary = Instantiate(primaryWeaponPrefab, primaryFirePoint.transform) as GameObject;
+        DisablePrimary();
+        DisableSecondary();
     }
 
     void Update()
     {
+        if (UnityEngine.InputSystem.Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            EnablePrimary();
+        }
+        if (UnityEngine.InputSystem.Keyboard.current.oKey.isPressed)
+        {
+            UpdatePrimary();
+        }
+        if (UnityEngine.InputSystem.Keyboard.current.oKey.wasReleasedThisFrame)
+        {
+            DisablePrimary();
+        }
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
-            EnableLaser();
+            EnableSecondary();
         }
         if(UnityEngine.InputSystem.Keyboard.current.pKey.isPressed)
         {
-            UpdateLaser();
+            UpdateSecondary();
         }
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasReleasedThisFrame)
         {
-            DisableLaser();
+            DisableSecondary();
         }
         if (UnityEngine.InputSystem.Keyboard.current.aKey.isPressed)
         {
