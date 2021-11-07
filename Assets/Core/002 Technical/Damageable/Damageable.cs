@@ -62,7 +62,7 @@ namespace Shmup
             // Emit explosion vfx
             var _explosion = explosionPool.GetFromPool(explosion);
             _explosion.transform.position = transform.position;
-            SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0,explosionClips.Length-1)],transform.position);
+            SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0, explosionClips.Length)], transform.position);
 
             gameObject.SetActive(false);
 
