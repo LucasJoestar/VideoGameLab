@@ -14583,7 +14583,7 @@ GameObject:
   - component: {fileID: 1956555884464052726}
   - component: {fileID: 1956555884464052729}
   m_Layer: 0
-  m_Name: LaserShafer
+  m_Name: LaserShaferOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
