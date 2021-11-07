@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
   m_Name: Player_MainWeapon
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 7186585937175200056, guid: 6bd2121ec32eed64c8431b4d6fc40031, type: 3}
+  projectiles: {fileID: 6006945065797380403, guid: 6bd2121ec32eed64c8431b4d6fc40031, type: 3}
   damages: 10

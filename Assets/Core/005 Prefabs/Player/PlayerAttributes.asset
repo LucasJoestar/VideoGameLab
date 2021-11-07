@@ -95,25 +95,65 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: c4aaf3f4-38c6-48c0-aeb2-c07933f26086
-      m_Path: <Keyboard>/q
+      m_Path: <Keyboard>/w
+      m_Interactions: Press(behavior=2)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 00e7c65d-9aeb-40a7-abda-3d86d23986d4
+      m_Path: <Gamepad>/buttonWest
       m_Interactions: Press(behavior=2)
       m_Processors: 
       m_Groups: 
       m_Action: Fire Main Input
       m_Flags: 0
   FireSecondaryInput:
-    m_Name: Fire Secondary Input
+    m_Name: Fire Main Input
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 627dbad1-0d9c-400a-aeca-7b98229cf6a3
+    m_ExpectedControlType: Button
+    m_Id: 9dbe6091-75c7-4562-a3ac-6892ad9967cd
     m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c4aaf3f4-38c6-48c0-aeb2-c07933f26086
+      m_Path: <Keyboard>/q
+      m_Interactions: Press(behavior=2)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 00e7c65d-9aeb-40a7-abda-3d86d23986d4
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: Press(behavior=2)
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0
   FireBombInput:
-    m_Name: Fire Bomb Input
+    m_Name: Fire Main Input
     m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 38113754-5c49-489d-84a2-85f8a771eaa5
+    m_ExpectedControlType: Button
+    m_Id: 9dbe6091-75c7-4562-a3ac-6892ad9967cd
     m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
+    m_Interactions: Press
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c4aaf3f4-38c6-48c0-aeb2-c07933f26086
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 00e7c65d-9aeb-40a7-abda-3d86d23986d4
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Fire Main Input
+      m_Flags: 0

@@ -75,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3534583059149761552}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.25, y: 0.36, z: 0}
+  m_LocalPosition: {x: 2.5, y: 4.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426553154492737235}
@@ -105,7 +105,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101222237215539168}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.25, y: -0.36, z: 0}
+  m_LocalPosition: {x: -2.5, y: 4.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 426553154492737235}
@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 8528006561433980542}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -0.007, y: -4.24, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 426553154492737235}
   - {fileID: 2356426971507562833}
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4641291104900015939, guid: d60c81759ee356d4b8645efcd0a93f82, type: 3}
+  m_Sprite: {fileID: 8716115918879258846, guid: 24678d800b126624d9294143c9625ba3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,7 +348,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 8528006561433980543}
-  collider: {fileID: 8528006561433980514}
   disabledComponents:
   - {fileID: 2686530028997403946}
   - {fileID: 1510736481711061424}
@@ -358,6 +357,7 @@ MonoBehaviour:
   explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
   blinkLoopCount: 8
   blinkDuration: 0.4
+  collider: {fileID: 8528006561433980514}
 --- !u!114 &8528006561433980515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +379,7 @@ MonoBehaviour:
   damageable: {fileID: 7019414584344825113}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 129
 --- !u!54 &8528006561433980541
 Rigidbody:
   m_ObjectHideFlags: 0

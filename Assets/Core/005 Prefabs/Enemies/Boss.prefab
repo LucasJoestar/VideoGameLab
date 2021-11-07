@@ -33,14 +33,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 7472442257924468788}
-  collider: {fileID: 7982824956798259340}
   disabledComponents:
   - {fileID: 6039473644221864091}
   maxHealth: 1
   health: 0
-  explosion: {fileID: 0}
+  explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
   blinkLoopCount: 6
   blinkDuration: 0.1
+  score: 100
   OnSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -148,11 +148,6 @@ PrefabInstance:
 --- !u!1 &7982824956798259344 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4764019876357673923, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
-  m_PrefabInstance: {fileID: 3230633266866701139}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &7982824956798259340 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 4764019876357673951, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
   m_PrefabInstance: {fileID: 3230633266866701139}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6039473644221864091 stripped

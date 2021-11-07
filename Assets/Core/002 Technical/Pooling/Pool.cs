@@ -91,6 +91,7 @@ namespace Shmup
             }
 
             freeInstances.Add(_instance);
+            _instance.transform.SetParent(null);
 
             _instance.gameObject.SetActive(true);
             _instance.OnGetFromPool();

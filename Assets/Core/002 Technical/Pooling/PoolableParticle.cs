@@ -14,6 +14,8 @@ namespace Shmup
         #region Particle System
         public ParticleSystem MainParticles = null;
         private Pool<PoolableParticle> pool = null;
+
+        public bool IsInPool = false;
         #endregion
 
         #region IPoolable
@@ -24,19 +26,22 @@ namespace Shmup
 
         public void OnGetFromPool()
         {
-            
+            IsInPool = false;
         }
 
         public void OnSendToPool()
         {
-            transform.SetParent(null);
+            IsInPool = true;
         }
         #endregion
 
         #region Particle
-        private void OnParticleSystemStopped()
+        private void OnDisable()
         {
-            pool.SendToPool(this);
+            if (!IsInPool)
+            {
+                pool.SendToPool(this);
+            }
         }
         #endregion
     }

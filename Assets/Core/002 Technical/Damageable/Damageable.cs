@@ -67,7 +67,9 @@ namespace Shmup
         protected virtual void OnDestroyed()
         {
             // Emit explosion vfx
-            explosionPool.GetFromPool(explosion);
+            var _explosion = explosionPool.GetFromPool(explosion);
+            _explosion.transform.position = transform.position;
+
             gameObject.SetActive(false);
 
             for (int i = 0; i < disabledComponents.Length; i++)
