@@ -22,7 +22,8 @@ namespace Shmup
 
         #region Methods
         public virtual void Fire()
-        { 
+        {
+            SoundManager.Instance.PlayClipAtPosition(weaponsData.GetRandomClip(), transform.position, weaponsData.VolumeScale);
             for (int _i = 0; _i < systems.Length; _i++)
             {
                 systems[_i].MainParticles.Play();
@@ -69,8 +70,11 @@ namespace Shmup
             {
                 for (int _i = 0; _i < systems.Length; _i++)
                 {
-                    systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                    systems[_i].SendToPoolOnInvisible = true;
+                    if(systems[_i].MainParticles.isEmitting)
+                    {
+                        systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                        systems[_i].SendToPoolOnInvisible = true;
+                    }
                 }
             }
         }

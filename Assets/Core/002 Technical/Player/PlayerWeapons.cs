@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 namespace Shmup
 {
@@ -8,8 +9,8 @@ namespace Shmup
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
 
-        private float baseFireRate = 0;
-        private float baseProjectileSize = 0;
+        private float baseFireRate = 1.0f;
+        private float baseProjectileSize = 1.0f;
         #endregion
 
         #region Methods
@@ -18,8 +19,8 @@ namespace Shmup
             base.OnEnable();
             for (int i = 0; i < systems.Length; i++)
             {
-                baseFireRate = systems[i].MainParticles.emission.rateOverTimeMultiplier;
-                baseProjectileSize = systems[i].MainParticles.main.startSizeMultiplier;
+                //baseFireRate = systems[i].MainParticles.emission.rateOverTimeMultiplier;
+                //baseProjectileSize = systems[i].MainParticles.main.startSizeMultiplier;
             }
         }
 
@@ -30,20 +31,31 @@ namespace Shmup
                 isAutoFiring = !isAutoFiring;
                 if (isAutoFiring)
                 {
-                    for (int i = 0; i < systems.Length; i++)
-                    {
-                        systems[i].MainParticles.Play();
-                    }
+                    AutoFire();
                 }
                 else
                 {
-                    for (int i = 0; i < systems.Length; i++)
+                    if (autoFireSequence.IsActive())
                     {
-                        systems[i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                        autoFireSequence.Kill();
                     }
                 }
             }
             else base.Fire();
+        }
+
+        private Sequence autoFireSequence; 
+        private void AutoFire()
+        {
+            base.Fire();
+            if(autoFireSequence.IsActive())
+            {
+                autoFireSequence.Kill();
+            }
+            autoFireSequence = DOTween.Sequence();
+            autoFireSequence.AppendInterval(weaponsData.FireRateTime / baseFireRate);
+            autoFireSequence.OnComplete(AutoFire);
+            autoFireSequence.Play();
         }
 
         public void IncreaseFireRate(float _multiplier)

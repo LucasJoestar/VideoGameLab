@@ -25,6 +25,7 @@ namespace Shmup
         [Header("FEEDBACKS")]
 
         [SerializeField] protected PoolableParticle explosion = null;
+        [SerializeField] protected AudioClip[] explosionClips = new AudioClip[] { }; 
         [SerializeField, Range(1, 10)] protected int blinkLoopCount = 8;
         [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f; 
 
@@ -69,6 +70,7 @@ namespace Shmup
             // Emit explosion vfx
             var _explosion = explosionPool.GetFromPool(explosion);
             _explosion.transform.position = transform.position;
+            SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0,explosionClips.Length-1)],transform.position);
 
             gameObject.SetActive(false);
 
