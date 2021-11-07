@@ -120,7 +120,7 @@ MonoBehaviour:
     - m_Name: 
       m_Id: c4aaf3f4-38c6-48c0-aeb2-c07933f26086
       m_Path: <Keyboard>/q
-      m_Interactions: Press(behavior=2)
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Fire Main Input
@@ -128,7 +128,7 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 00e7c65d-9aeb-40a7-abda-3d86d23986d4
       m_Path: <Gamepad>/buttonNorth
-      m_Interactions: Press(behavior=2)
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Fire Main Input
