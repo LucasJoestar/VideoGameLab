@@ -15,7 +15,6 @@ namespace Shmup
         [Header("REFERENCES")]
 
         [SerializeField] protected SpriteRenderer[] sprites = new SpriteRenderer[] { };
-        [SerializeField] protected new Collider collider = null;
         [SerializeField] protected MonoBehaviour[] disabledComponents = new MonoBehaviour[] { };
 
         [Header("HEALTH")]

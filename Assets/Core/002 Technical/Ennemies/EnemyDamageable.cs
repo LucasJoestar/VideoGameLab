@@ -4,8 +4,8 @@
 //
 // ================================================================================== //
 
-using UnityEngine;
 using DG.Tweening;
+using UnityEngine;
 
 namespace Shmup
 {

@@ -80,6 +80,28 @@ namespace Shmup
         }
         #endregion
 
+        #region Level
+        public void OnMiniBossSpawn()
+        {
+
+        }
+
+        public void OnMiniBossDefeated()
+        {
+
+        }
+
+        public void OnBossSpawn()
+        {
+
+        }
+
+        public void OnBossDefeated()
+        {
+
+        }
+        #endregion
+
         #region Mono Behaviour
         private void Awake()
         {

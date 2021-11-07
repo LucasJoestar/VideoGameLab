@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6972274675149976134}
   - component: {fileID: 1840486965929643208}
   m_Layer: 0
-  m_Name: ShootGun
+  m_Name: Saucer_ShotGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

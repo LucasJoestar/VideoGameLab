@@ -11,9 +11,21 @@ namespace Shmup
 {
     public class PlayerDamageable : Damageable
     {
-        #region Methods
+        #region Damages
+        [SerializeField] protected new Collider collider = null;
+        private bool hasShield = false;
+
+        // -----------------------
+
         public override bool TakeDamages(int _damages)
         {
+            // No damage when having a shield.
+            if (hasShield)
+            {
+                _damages = 0;
+                hasShield = false;
+            }
+
             bool _isDead = TakeDamages(_damages);
             collider.enabled = false;
 
@@ -41,9 +53,9 @@ namespace Shmup
 
         public void ActivateShield()
         {
-            if (health == 1)
+            if (!hasShield)
             {
-                health = 2;
+                hasShield = true;
 
                 // Instantiate shield.
             }

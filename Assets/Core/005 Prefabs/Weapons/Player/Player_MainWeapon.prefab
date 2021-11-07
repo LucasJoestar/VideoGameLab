@@ -4816,7 +4816,7 @@ GameObject:
   - component: {fileID: 7186585937175200056}
   - component: {fileID: 7186585937175200057}
   m_Layer: 11
-  m_Name: Basic Weapon
+  m_Name: Player_MainWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

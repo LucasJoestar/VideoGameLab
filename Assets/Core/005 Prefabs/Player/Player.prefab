@@ -255,10 +255,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8528006561433980540}
   - component: {fileID: 8528006561433980543}
+  - component: {fileID: 7019414584344825113}
   - component: {fileID: 8528006561433980515}
   - component: {fileID: 8528006561433980541}
   - component: {fileID: 8528006561433980514}
-  - component: {fileID: 7019414584344825113}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -334,6 +334,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7019414584344825113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528006561433980542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3d96318bd781c46af9656ca50c3385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 8528006561433980543}
+  collider: {fileID: 8528006561433980514}
+  disabledComponents:
+  - {fileID: 2686530028997403946}
+  - {fileID: 1510736481711061424}
+  - {fileID: 2570395333086081920}
+  maxHealth: 1
+  health: 1
+  explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
+  blinkLoopCount: 8
+  blinkDuration: 0.4
 --- !u!114 &8528006561433980515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,9 +376,10 @@ MonoBehaviour:
   mainWeapons: {fileID: 2686530028997403946}
   secondaryWeapon: {fileID: 1510736481711061424}
   bomb: {fileID: 2570395333086081920}
+  damageable: {fileID: 7019414584344825113}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 640
 --- !u!54 &8528006561433980541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -384,27 +409,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7019414584344825113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8528006561433980542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d96318bd781c46af9656ca50c3385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 8528006561433980543}
-  collider: {fileID: 8528006561433980514}
-  disabledComponents:
-  - {fileID: 2686530028997403946}
-  - {fileID: 1510736481711061424}
-  - {fileID: 2570395333086081920}
-  blinkLoopCount: 8
-  explosion: {fileID: 0}
-  hasShield: 1
 --- !u!1 &9116731329453495198
 GameObject:
   m_ObjectHideFlags: 0
