@@ -81,7 +81,7 @@ namespace Shmup
             transform.localPosition = Vector3.zero;
 
             if (introSequence.IsActive())
-                introSequence.Complete();
+                introSequence.Complete(true);
 
             introSequence = DOTween.Sequence();
             introSequence.AppendInterval(introDuration);
