@@ -22,7 +22,7 @@ namespace Shmup
         #region Methods
         public void Activate()
         {
-            if(isAutoFiring)
+            if (isAutoFiring)
             {
                 weapons.Fire(); 
                 if(sequence.IsActive())

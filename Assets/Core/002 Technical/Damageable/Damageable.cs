@@ -54,7 +54,7 @@ namespace Shmup
         protected virtual void OnTakeDamages()
         {
             // Blinking
-            if (!sequence.IsPlaying())
+            if (!sequence.IsActive())
             {
                 sequence = DOTween.Sequence();
                 foreach (var _sprite in sprites)

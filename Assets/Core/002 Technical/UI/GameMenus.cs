@@ -109,6 +109,8 @@ namespace Shmup
                     _flashSequence.AppendInterval(1f);
                 }
 
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(playButton.transform.parent.gameObject);
+
                 // Intro sequence.
                 {
                     menuRoot.gameObject.SetActive(true);
@@ -143,6 +145,8 @@ namespace Shmup
                                    : "Beat That Score";
 
                 menuRoot.gameObject.SetActive(false);
+
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(restartButton.transform.parent.gameObject);
             }
 
             // Flash
