@@ -70,7 +70,7 @@ namespace Shmup
             {
                 for (int _i = 0; _i < systems.Length; _i++)
                 {
-                    if(systems[_i].MainParticles.isEmitting)
+                    if ((systems[_i] != null) && systems[_i].MainParticles.isEmitting)
                     {
                         systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                         systems[_i].SendToPoolOnInvisible = true;

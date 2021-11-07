@@ -274,8 +274,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8528006561433980542}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.007, y: -4.24, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 426553154492737235}
@@ -356,9 +356,12 @@ MonoBehaviour:
   maxHealth: 1
   health: 1
   explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
+  explosionClips: []
   blinkLoopCount: 8
   blinkDuration: 0.4
   collider: {fileID: 8528006561433980514}
+  controller: {fileID: 0}
+  introDuration: 1
 --- !u!114 &8528006561433980515
 MonoBehaviour:
   m_ObjectHideFlags: 0
