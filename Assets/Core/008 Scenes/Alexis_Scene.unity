@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scarab
       objectReference: {fileID: 0}
+    - target: {fileID: 1624759020246108824, guid: 16f081fe894f841499291b754d91601b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1624759020246108826, guid: 16f081fe894f841499291b754d91601b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -215,6 +219,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &329664612 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 3612858296104216670, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
+  m_PrefabInstance: {fileID: 1554009365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &359717372
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Saucer
       objectReference: {fileID: 0}
+    - target: {fileID: 6634556130310422472, guid: 31f4d2a4020cdea4b865730573d45620, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6634556130310422474, guid: 31f4d2a4020cdea4b865730573d45620, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -968,6 +981,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5444147471862165783, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 329664612}
     - target: {fileID: 5590048442766318301, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1015,6 +1032,14 @@ PrefabInstance:
     - target: {fileID: 5590048442766318303, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
       propertyPath: m_Name
       value: HandThing
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590048442766318303, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137354504084926563, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0ead3d707f97af42b83ec147704dcea, type: 3}
@@ -1072,6 +1097,10 @@ PrefabInstance:
     - target: {fileID: 9130797143055995663, guid: 31687573c981cd149926c29fc75e010f, type: 3}
       propertyPath: m_Name
       value: Eel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130797143055995663, guid: 31687573c981cd149926c29fc75e010f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31687573c981cd149926c29fc75e010f, type: 3}
@@ -1351,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menus: {fileID: 0}
+  player: {fileID: 0}
   partOne: {fileID: 0}
   partTwo: {fileID: 0}
   IsLive: 0

@@ -84,14 +84,6 @@ namespace Shmup
         {
             health = maxHealth;
         }
-
-        /*
-        private void OnParticleCollision(GameObject other)
-        {
-            int _damages = other.GetComponentInParent<Weapons>().WeaponsData.Damages; 
-            TakeDamages(_damages);
-        }
-        */
         #endregion
     }
 }

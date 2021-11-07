@@ -21,6 +21,7 @@ namespace Shmup
             base.OnDestroyed();
 
             // Increment score.
+            ScoreManager.Instance.IncreaseScore(score); 
         }
         #endregion
     }
