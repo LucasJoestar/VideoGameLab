@@ -4,6 +4,7 @@
 //
 // ================================================================================== //
 
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening; 
 
@@ -11,16 +12,30 @@ namespace Shmup
 {
     public class EnemyController : MonoBehaviour
     {
+        public static List<EnemyController> enemies = new List<EnemyController>();
         #region Fields and properties
-        [SerializeField] private Weapons weapons = null;
-        [SerializeField, Range(.1f, 5.0f)] private float fireInterval = 1.0f;
+        [SerializeField] protected Weapons weapons = null;
+        [SerializeField] protected EnemyDamageable damageable = null;
         [SerializeField] private bool isAutoFiring = true;
 
-        private Sequence sequence = null; 
+        protected Sequence sequence = null; 
         #endregion
 
         #region Methods
-        public void Activate()
+        public virtual void ApplyBombBehaviour(float _waitingTime, int _bombDamages = 999)
+        {
+            if (sequence.IsActive())
+                sequence.Kill();
+            sequence = DOTween.Sequence();
+            sequence.AppendInterval(_waitingTime);
+            sequence.OnComplete(() => damageable.TakeDamages(_bombDamages));
+            sequence.Play();
+
+            weapons.CancelFire();
+        }
+
+
+        public virtual void Activate()
         {
             if (isAutoFiring)
             {
@@ -30,14 +45,15 @@ namespace Shmup
                     sequence.Kill(); 
                 }
                 sequence = DOTween.Sequence();
-                sequence.AppendInterval(fireInterval);
+                sequence.AppendInterval(weapons.WeaponsData.FireRateTime);
                 sequence.OnComplete(Activate); 
             }
         }
 
         private void OnEnable()
         {
-            if(Application.isPlaying)
+            enemies.Add(this);
+            if (Application.isPlaying)
             {
                 Activate();
             }
@@ -53,6 +69,7 @@ namespace Shmup
 
         private void OnDisable()
         {
+            enemies.Remove(this);
             if(sequence.IsActive())
             {
                 sequence.Kill();

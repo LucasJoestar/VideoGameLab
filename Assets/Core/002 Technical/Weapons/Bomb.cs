@@ -11,16 +11,16 @@ namespace Shmup
     public class Bomb : Weapons
     {
         #region Fields and properties
-        [SerializeField] private new BoxCollider collider = null;
+        [SerializeField, Range(.01f, 1.0f)] private float waitingDelay = 0.05f;
         #endregion
 
         #region Methods
-        private RaycastHit[] hits = new RaycastHit[] { }; 
-
         public override void Fire()
         {
-            base.Fire();
-            // get enemies from static array and stop attack and take damages
+            for (int i = 0; i < EnemyController.enemies.Count; i++)
+            {
+                EnemyController.enemies[i].ApplyBombBehaviour(waitingDelay * i, weaponsData.Damages);
+            }
         }
         #endregion
     }

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Shmup
 {
-    [CreateAssetMenu(fileName = "Weapons Data", menuName = "Weapons/Data", order = 101)]
+    [CreateAssetMenu(fileName = "Weapons Data", menuName = "SHMUP/Weapons/Data", order = 101)]
     public class WeaponsData : ScriptableObject
     {
         [SerializeField] private PoolableParticle projectiles;
