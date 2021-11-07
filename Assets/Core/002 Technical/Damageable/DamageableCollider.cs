@@ -9,7 +9,7 @@ namespace Shmup
 
         private void OnParticleCollision(GameObject other)
         {
-            int _damages = other.GetComponentInParent<Weapons>().WeaponsData.Damages;
+            int _damages = other.GetComponent<PoolableProjectile>().WeaponsData.Damages;
             damageable.TakeDamages(_damages);
         }
     }

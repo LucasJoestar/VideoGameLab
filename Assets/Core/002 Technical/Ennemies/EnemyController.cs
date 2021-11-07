@@ -35,9 +35,20 @@ namespace Shmup
             }
         }
 
-        private void Start()
+        private void OnEnable()
         {
-            Activate();
+            if(Application.isPlaying)
+            {
+                Activate();
+            }
+        }
+
+        private void OnDisable()
+        {
+            if(sequence.IsActive())
+            {
+                sequence.Kill();
+            }
         }
         #endregion
     }
