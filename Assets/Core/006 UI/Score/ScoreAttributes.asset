@@ -35,7 +35,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.3019892
     - serializedVersion: 3
       time: 1
       value: 0
