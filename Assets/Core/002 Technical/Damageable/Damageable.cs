@@ -27,8 +27,7 @@ namespace Shmup
         [SerializeField] protected PoolableParticle explosion = null;
         [SerializeField] protected AudioClip[] explosionClips = new AudioClip[] { }; 
         [SerializeField, Range(1, 10)] protected int blinkLoopCount = 8;
-        [SerializeField, Range(.1f, 3.0f)] protected float blinkDuration = .4f;
-        [SerializeField] private Transform[] explosionPoints = new Transform[] { };
+        [SerializeField, Range(0f, 3.0f)] protected float blinkDuration = .1f; 
 
         public float UniqueBlinkDuration => blinkDuration / (blinkLoopCount * 2);
 
@@ -55,35 +54,15 @@ namespace Shmup
 
         protected virtual void OnTakeDamages()
         {
-            // Blinking
-            if (!sequence.IsActive())
-            {
-                sequence = DOTween.Sequence();
-                foreach (var _s in sprites)
-                {
-                    sequence.Join(_s.DOFade(0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
-                }
-            }
+            
         }
 
         protected virtual void OnDestroyed()
         {
             // Emit explosion vfx
-            if(explosionPoints.Length > 0)
-            {
-                for (int i = 0; i < explosionPoints.Length; i++)
-                {
-                    var _explosion = explosionPool.GetFromPool(explosion);
-                    _explosion.transform.position = explosionPoints[i].position;
-                }
-            }
-            else
-            {
-                var _explosion = explosionPool.GetFromPool(explosion);
-                _explosion.transform.position = transform.position;
-            }
-            if(explosionClips.Length > 0)
-                SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0,explosionClips.Length-1)],transform.position);
+            var _explosion = explosionPool.GetFromPool(explosion);
+            _explosion.transform.position = transform.position;
+            SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0,explosionClips.Length-1)],transform.position);
 
             gameObject.SetActive(false);
 

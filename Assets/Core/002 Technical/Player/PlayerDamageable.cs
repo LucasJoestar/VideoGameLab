@@ -45,6 +45,16 @@ namespace Shmup
         {
             base.OnTakeDamages();
 
+            // Blinking
+            if (!sequence.IsActive())
+            {
+                sequence = DOTween.Sequence();
+                foreach (var _s in sprites)
+                {
+                    sequence.Join(_s.DOFade(0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
+                }
+            }
+
             // Destroy shield.
         }
 
