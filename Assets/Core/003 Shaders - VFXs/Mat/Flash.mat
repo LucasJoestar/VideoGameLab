@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Laser
+  m_Name: Flash
   m_Shader: {fileID: -6465566751694194690, guid: 7c32b0c95af96c044a9f417d05b2f316, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_038e25671edd47ffaa1da13a8f4f49f8:
-        m_Texture: {fileID: 2800000, guid: cd208085bba1ecd47af9bc9f74dcf8dd, type: 3}
+        m_Texture: {fileID: 2800000, guid: e9b4334465e7c48408352a6ecd5ef88c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5f32f2cf670f4f58a92f7c08c025a90a:
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_cbb43b5f63964154ad5c8c548045f32e:
-        m_Texture: {fileID: 2800000, guid: 91ca6ad841818a24cada4276d0840e01, type: 3}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -82,9 +82,9 @@ Material:
     m_Floats:
     - Vector1_07fbf4b6bee340ef9956b0fba54bf244: 25
     - Vector1_0bb868a53fc747b09c54231c8771076a: 10
-    - Vector1_932c8846a0b4417a96f94eb1e5abfe0d: 0.175
+    - Vector1_932c8846a0b4417a96f94eb1e5abfe0d: 0.211
     - Vector1_e2cc5cbdb05f4c208a5b94f3bc9d42a1: 2
-    - Vector1_e9c382e0d6ed4cb4aef524ce9054d1fa: 0.101
+    - Vector1_e9c382e0d6ed4cb4aef524ce9054d1fa: 0.632
     - Vector1_f09ac45bcee543c88de74df2ea0561fe: 30
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -105,10 +105,10 @@ Material:
     m_Colors:
     - Color_77aa591c92104f8a9f93ca3cabeea9ee: {r: 0.8679245, g: 0.4708081, b: 0.4708081, a: 1}
     - Color_94b4c7bc84a3475d821c3fab70ffdc38: {r: 1, g: 1, b: 1, a: 1}
-    - Color_cc6076e56a0d4f12ab127a3b1e78505e: {r: 128, g: 128, b: 128, a: 1}
-    - Vector2_7af62c3180534c2f82fd31d29b198a48: {r: -1, g: 0, b: 0, a: 0}
+    - Color_cc6076e56a0d4f12ab127a3b1e78505e: {r: 256, g: 256, b: 256, a: 1}
+    - Vector2_7af62c3180534c2f82fd31d29b198a48: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_b601edd8fd234a1a8324e2dd51d411de: {r: -0.5, g: 0, b: 0, a: 0}
-    - Vector2_da01cb9dc3d74cef81567c18bcfc5063: {r: -1, g: 0, b: 0, a: 0}
+    - Vector2_da01cb9dc3d74cef81567c18bcfc5063: {r: 0, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

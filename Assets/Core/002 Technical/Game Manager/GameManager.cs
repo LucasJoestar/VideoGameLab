@@ -4,6 +4,7 @@
 //
 // ================================================================================== //
 
+using UnityEngine.Playables;
 using UnityEngine;
 
 namespace Shmup
@@ -12,6 +13,9 @@ namespace Shmup
     {
         #region Global Members
         public static GameManager Instance { get; private set; }
+
+        [SerializeField] private PlayableDirector partOne = null;
+        [SerializeField] private PlayableDirector partTwo = null;
         #endregion
 
         #region Game Life
@@ -22,11 +26,18 @@ namespace Shmup
         public void StartRun()
         {
             IsLive = true;
+
+            partOne.Play();
         }
 
         public void Restart()
         {
             IsLive = true;
+
+            partOne.Stop();
+            partTwo.Stop();
+
+            partOne.Play();
         }
 
         public void Stop()

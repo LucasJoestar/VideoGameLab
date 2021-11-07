@@ -4,6 +4,7 @@
 //
 // ================================================================================== //
 
+using DG.Tweening;
 using UnityEngine;
 
 namespace Shmup
@@ -27,20 +28,25 @@ namespace Shmup
         #region Inputs
         private void InputUpdate()
         {
+            // Movement.
             Vector2 _movement = attributes.MoveInput.ReadValue<Vector2>();
             if (_movement != Vector2.zero)
             {
                 _movement *= attributes.Speed * Time.smoothDeltaTime;
                 Move(_movement);
             }
+
+            // Fire.
             if(attributes.FireMainInput.triggered)
             {
                 mainWeapons.Fire();
             }
+
             if (attributes.FireSecondaryInput.triggered)
             {
                 secondaryWeapon.Fire();
             }
+
             if (attributes.FireBombInput.triggered)
             {
                 bomb.Fire();

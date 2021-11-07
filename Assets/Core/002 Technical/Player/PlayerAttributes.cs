@@ -18,20 +18,6 @@ namespace Shmup
 
         [Range(1f, 100f)] public float Speed = 5f;
 
-        [Space(10f), Header("ROTATION")]
-
-        [Range(0f, 45f)] public float RotationAngle = 10f;
-
-        [Space(5f)]
-
-        public AnimationCurve MovementRotationCurve = new AnimationCurve();
-        [Range(0f, 100f)] public float MovementRotationSpeed = 5f;
-
-        [Space(5f)]
-
-        public AnimationCurve IdleRotationCurve = new AnimationCurve();
-        [Range(0f, 100f)] public float IdleRotationSpeed = 5f;
-
         [Space(10f), Header("INPUTS")]
 
         public InputAction MoveInput = new InputAction();
