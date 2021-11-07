@@ -42,18 +42,24 @@ namespace Shmup
             {
                 var _instance = weaponsData.GetInstance();
                 Transform _parent = weaponsAnchor[_i];
-
-                Vector3 _originalScale = _instance.transform.localScale;
-
-                _instance.transform.SetParent(_parent, true);
-                _instance.transform.localPosition = Vector3.zero;
-                _instance.transform.localRotation = Quaternion.identity;
-                _instance.transform.localScale = _originalScale;
+                
+                // _instance.transform.SetParent(_parent, true);
+                _instance.transform.position = weaponsAnchor[_i].transform.position;
+                _instance.transform.rotation = weaponsAnchor[_i].transform.rotation;
+                // _instance.transform.localRotation = Quaternion.identity;
 
                 systems[_i] = _instance;
 
                 ParticleSystem.CollisionModule _module = systems[_i].MainParticles.collision;
                 _module.collidesWith = targetMask;
+            }
+        }
+
+        private void Update()
+        {
+            for (int i = 0; i < systems.Length; i++)
+            {
+                systems[i].transform.position = weaponsAnchor[i].transform.position;
             }
         }
 
@@ -64,12 +70,7 @@ namespace Shmup
                 for (int _i = 0; _i < systems.Length; _i++)
                 {
                     systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                    systems[_i].transform.SetParent(null);
                     systems[_i].SendToPoolOnInvisible = true;
-                    /*
-                    var _instance = systems[_i];
-                    weaponsData.Pool.SendToPool(_instance);
-                    */
                 }
             }
         }

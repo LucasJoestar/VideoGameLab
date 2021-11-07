@@ -1,30 +1,64 @@
-Shader "Custom/Blink" {
-	Properties{
-		  _MainTex("Base (RGB)", 2D) = "white" {}
-		  _Blink("Blink", Float) = 0
+Shader "Custom/Blink"
+{
+	Properties
+	{
+		[HideInInspector] _MainTex("Texture", 2D) = "white" {}
+		_Color("Color", Color) = (1, 1, 1, 0)
 	}
-		SubShader{
-			Tags { "RenderType" = "Opaque" }
-			LOD 200
-
-			CGPROGRAM
-			#pragma surface surf Lambert
-
-			sampler2D _MainTex;
-			float _Blink;
-
-			struct Input {
-				float2 uv_MainTex;
-			};
-
-			void surf(Input IN, inout SurfaceOutput o) {
-				half4 c = tex2D(_MainTex, IN.uv_MainTex);
-				if (_Blink == 1.0f)
-					c *= (0.5f + abs(sin(_Time.w)));
-				o.Albedo = c.rgb;
-				o.Alpha = c.a;
+		SubShader
+		{
+			Tags
+			{
+				"Queue" = "Transparent"
 			}
-			ENDCG
-		  }
-			  FallBack "Diffuse"
+
+			Cull Off
+			Lighting Off
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha
+
+			Pass
+			{
+				CGPROGRAM
+				#pragma vertex vert
+				#pragma fragment frag
+				#include "UnityCG.cginc"
+
+				struct appdata
+				{
+					half4 vertex : POSITION;
+					half4 color : COLOR;
+					half2 uv : TEXCOORD0;
+				};
+
+				struct v2f
+				{
+					half4 vertex : SV_POSITION;
+					half2 uv : TEXCOORD0;
+					half4 color : TEXCOORD1;
+				};
+
+				sampler2D _MainTex;
+				half4 _MainTex_ST;
+
+				fixed4 _Color;
+
+				v2f vert(appdata v)
+				{
+					v2f o;
+					o.vertex = UnityObjectToClipPos(v.vertex);
+					o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+					o.color = v.color;
+					return o;
+				}
+
+				half4 frag(v2f i) : SV_Target
+				{
+					half4 col = tex2D(_MainTex, i.uv);
+					col.rgb = lerp(col.rgb, i.color.rgb, _Color.a);
+					return col;
+				}
+				ENDCG
+			}
+		}
 }
