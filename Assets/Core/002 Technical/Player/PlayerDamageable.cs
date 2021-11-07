@@ -26,8 +26,11 @@ namespace Shmup
                 hasShield = false;
             }
 
-            bool _isDead = TakeDamages(_damages);
+            bool _isDead = base.TakeDamages(_damages);
             collider.enabled = false;
+
+            if (!sequence.IsActive())
+                sequence = DOTween.Sequence();
 
             sequence.Join(CameraAspectRatio.Instance.Camera.transform.DOShakePosition(0.05f * blinkLoopCount * 2, .15f));
             sequence.AppendCallback(() =>
@@ -59,6 +62,34 @@ namespace Shmup
 
                 // Instantiate shield.
             }
+        }
+        #endregion
+
+        #region Reset
+        [SerializeField] private PlayerController controller = null;
+        [SerializeField, Range(0f, 5f)] private float introDuration = 1f;
+        private Sequence introSequence = null;
+
+        // -----------------------
+
+        public void ResetPlayer()
+        {
+            controller.enabled = false;
+            collider.enabled = false;
+
+            gameObject.SetActive(true);
+            transform.localPosition = Vector3.zero;
+
+            if (introSequence.IsActive())
+                introSequence.Complete();
+
+            introSequence = DOTween.Sequence();
+            introSequence.AppendInterval(introDuration);
+            introSequence.AppendCallback(() =>
+            {
+                collider.enabled = true;
+                controller.enabled = true;
+            });
         }
         #endregion
     }

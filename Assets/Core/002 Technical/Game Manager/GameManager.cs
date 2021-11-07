@@ -19,6 +19,7 @@ namespace Shmup
         [Header("REFERENCES")]
 
         [SerializeField] private GameMenus menus = null;
+        [SerializeField] private PlayerDamageable player = null;
 
         [Header("TIMELINES")]
 
@@ -37,6 +38,8 @@ namespace Shmup
             IsLive = true;
 
             partOne.Play();
+
+            player.ResetPlayer();
         }
 
         public void Restart()
@@ -45,6 +48,7 @@ namespace Shmup
 
             partOne.Stop();
             partTwo.Stop();
+
 
             StartRun();
         }
@@ -61,7 +65,7 @@ namespace Shmup
 
         private void Stop(Action _callback)
         {
-            if (endSequence.IsPlaying())
+            if (endSequence.IsActive())
                 return;
 
             endSequence = DOTween.Sequence();

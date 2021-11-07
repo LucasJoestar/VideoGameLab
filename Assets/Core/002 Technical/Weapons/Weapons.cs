@@ -26,7 +26,6 @@ namespace Shmup
             for (int _i = 0; _i < systems.Length; _i++)
             {
                 systems[_i].MainParticles.Play();
-                // systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting); 
             }
         }
         #endregion
@@ -44,9 +43,12 @@ namespace Shmup
                 var _instance = weaponsData.GetInstance();
                 Transform _parent = weaponsAnchor[_i];
 
-                _instance.transform.SetParent(_parent);
+                Vector3 _originalScale = _instance.transform.localScale;
+
+                _instance.transform.SetParent(_parent, true);
                 _instance.transform.localPosition = Vector3.zero;
                 _instance.transform.localRotation = Quaternion.identity;
+                _instance.transform.localScale = _originalScale;
 
                 systems[_i] = _instance;
 
@@ -61,10 +63,13 @@ namespace Shmup
             {
                 for (int _i = 0; _i < systems.Length; _i++)
                 {
-                    //systems[i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-
-                    var _instance = weaponsData.GetInstance();
+                    systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    systems[_i].transform.SetParent(null);
+                    systems[_i].SendToPoolOnInvisible = true;
+                    /*
+                    var _instance = systems[_i];
                     weaponsData.Pool.SendToPool(_instance);
+                    */
                 }
             }
         }

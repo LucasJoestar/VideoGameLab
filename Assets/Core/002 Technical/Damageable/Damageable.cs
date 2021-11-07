@@ -54,7 +54,7 @@ namespace Shmup
         protected virtual void OnTakeDamages()
         {
             // Blinking
-            if (!sequence.IsPlaying())
+            if (!sequence.IsActive())
             {
                 sequence = DOTween.Sequence();
                 foreach (var _sprite in sprites)
@@ -83,12 +83,6 @@ namespace Shmup
         protected virtual void OnEnable()
         {
             health = maxHealth;
-        }
-
-        private void OnParticleCollision(GameObject other)
-        {
-            int _damages = other.GetComponentInParent<Weapons>().WeaponsData.Damages; 
-            TakeDamages(_damages);
         }
         #endregion
     }

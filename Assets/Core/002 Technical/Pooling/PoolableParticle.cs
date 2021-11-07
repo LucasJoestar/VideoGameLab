@@ -16,6 +16,7 @@ namespace Shmup
         private Pool<PoolableParticle> pool = null;
 
         public bool IsInPool = false;
+        public bool SendToPoolOnInvisible = false;
         #endregion
 
         #region IPoolable
@@ -32,6 +33,7 @@ namespace Shmup
         public void OnSendToPool()
         {
             IsInPool = true;
+            SendToPoolOnInvisible = false;
         }
         #endregion
 
@@ -39,6 +41,14 @@ namespace Shmup
         private void OnDisable()
         {
             if (!IsInPool)
+            {
+                pool.SendToPool(this);
+            }
+        }
+
+        private void OnBecameInvisible()
+        {
+            if(!IsInPool && SendToPoolOnInvisible)
             {
                 pool.SendToPool(this);
             }
