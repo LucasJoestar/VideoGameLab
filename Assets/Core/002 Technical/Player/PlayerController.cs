@@ -20,8 +20,10 @@ namespace Shmup
         [SerializeField] private PlayerWeapons mainWeapons = null;
         [SerializeField] private Weapons secondaryWeapon = null;
         [SerializeField] private Bomb bomb = null;
+
         [Space(5f)]
 
+        [SerializeField] private PlayerDamageable damageable = null;
         [SerializeField] private LayerMask collisionMask = new LayerMask();
         #endregion
 
@@ -66,7 +68,7 @@ namespace Shmup
             float _distance = _magnitude + (Physics.defaultContactOffset * 2f);
             Vector2 _normalizedVelocity = _velocity.normalized;
 
-            int _count = Physics.SphereCastNonAlloc(rigidbody.position, _radius, _normalizedVelocity, castBuffer, _distance, collisionMask, QueryTriggerInteraction.Ignore);
+            int _count = Physics.SphereCastNonAlloc(rigidbody.position, _radius, _normalizedVelocity, castBuffer, _distance, collisionMask, QueryTriggerInteraction.Collide);
             if (_count == 0)
             {
                 MoveObject(_velocity);
@@ -78,16 +80,27 @@ namespace Shmup
             for (int _i = 0; _i < _count; _i++)
             {
                 RaycastHit _hit = castBuffer[_i];
-                float _hitDistance = _hit.distance - Physics.defaultContactOffset;
-
-                if (_hitDistance <= 0f)
+                if (_hit.collider.isTrigger)
                 {
-                    return;
+                    // Every trigger is a hit.
+                    if (collider.enabled)
+                    {
+                        damageable.TakeDamages(1);
+                        return;
+                    }                    
                 }
-                else if (_hitDistance < _distance)
+                else
                 {
-                    _mainHit = _hit;
-                    _distance = _hitDistance;
+                    float _hitDistance = _hit.distance - Physics.defaultContactOffset;
+                    if (_hitDistance <= 0f)
+                    {
+                        return;
+                    }
+                    else if (_hitDistance < _distance)
+                    {
+                        _mainHit = _hit;
+                        _distance = _hitDistance;
+                    }
                 }
             }
 

@@ -1,3 +1,9 @@
+// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
+//
+// Notes:
+//
+// ================================================================================== //
+
 using UnityEngine;
 
 namespace Shmup
@@ -7,6 +13,7 @@ namespace Shmup
         #region Fields and Properties
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
+
         public bool IsAutoFiring => isAutoFiring;
         #endregion
 
@@ -20,18 +27,19 @@ namespace Shmup
                 {
                     for (int i = 0; i < systems.Length; i++)
                     {
-                        systems[i].Play();
+                        systems[i].MainParticles.Play();
                     }
                 }
                 else
                 {
                     for (int i = 0; i < systems.Length; i++)
                     {
-                        systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                        systems[i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
                     }
                 }
             }
-            else base.Fire();
+            else
+                base.Fire();
         }
         #endregion
     }

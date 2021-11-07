@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3580302104546687854}
-  - {fileID: 5433295474462487398}
+  - {fileID: 1147529379881629310}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -60,7 +60,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4764019876357673923}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.3
@@ -77,14 +77,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84838cddbfa74e42b2c3fc18d52b800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 5433295474462487399}
+  sprites: []
   collider: {fileID: 4764019876357673951}
   disabledComponents:
   - {fileID: 9152729037625088968}
+  maxHealth: 1
+  health: 0
+  explosion: {fileID: 0}
   blinkLoopCount: 6
   blinkDuration: 0.1
-  explosion: {fileID: 0}
-  maxHealth: 1
   score: 100
 --- !u!114 &1218449924995442145
 MonoBehaviour:
@@ -276,7 +277,7 @@ GameObject:
   - component: {fileID: 5433295474462487398}
   - component: {fileID: 5433295474462487399}
   m_Layer: 9
-  m_Name: Sprite
+  m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,13 +290,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5433295474462487397}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5433295474348548377}
-  m_Father: {fileID: 4764019876357673921}
-  m_RootOrder: 1
+  m_Father: {fileID: 1147529379881629310}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5433295474462487399
 SpriteRenderer:
@@ -348,6 +349,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6887331406185758837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147529379881629310}
+  m_Layer: 9
+  m_Name: Sprites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147529379881629310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887331406185758837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5433295474462487398}
+  m_Father: {fileID: 4764019876357673921}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8254971149428204125
 GameObject:
   m_ObjectHideFlags: 0

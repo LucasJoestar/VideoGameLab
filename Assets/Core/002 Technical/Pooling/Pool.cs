@@ -5,6 +5,7 @@
 // ================================================================================== //
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 using Object = UnityEngine.Object;
@@ -14,19 +15,38 @@ namespace Shmup
     /// <summary>
     /// Base poolable object interface.
     /// </summary>
-    public interface IPoolable
+    public interface IPoolable<T> where T : MonoBehaviour, IPoolable<T>
     {
-        void OnCreated();
+        void OnCreated(Pool<T> _pool);
 
         void OnGetFromPool();
 
         void OnSendToPool();
     }
 
-    public class Pool<T> where T : MonoBehaviour, IPoolable
+    public abstract class Pool
+    {
+        protected static List<Pool> allPools = new List<Pool>();
+
+        // -----------------------
+
+        public static void ResetAll()
+        {
+            foreach (Pool _pool in allPools)
+            {
+                _pool.Reset();
+            }
+        }
+
+        public abstract void Reset();
+    }
+
+    public class Pool<T> : Pool where T : MonoBehaviour, IPoolable<T>
     {
         #region Global Members
         public const int DefaultExpandSize = 3;
+
+        private List<T> freeInstances = new List<T>();
 
         public int ExpandSize = DefaultExpandSize;
 
@@ -39,6 +59,19 @@ namespace Shmup
         {
             pool = new T[_size];
             ExpandSize = _expandSize;
+
+            allPools.Add(this);
+        }
+        #endregion
+
+        #region Pool Reset
+        public override void Reset()
+        {
+            for (int _i = freeInstances.Count; _i-- > 0;)
+            {
+                var _instance = freeInstances[_i];
+                SendToPool(_instance);
+            }
         }
         #endregion
 
@@ -49,13 +82,15 @@ namespace Shmup
             if (poolIndex == -1)
             {
                 _instance = Object.Instantiate(_prefab);
-                _instance.OnCreated();
+                _instance.OnCreated(this);
             }
             else
             {
                 _instance = pool[poolIndex];
                 poolIndex--;
             }
+
+            freeInstances.Add(_instance);
 
             _instance.gameObject.SetActive(true);
             _instance.OnGetFromPool();
@@ -75,6 +110,7 @@ namespace Shmup
             _instance.gameObject.SetActive(false);
 
             pool[poolIndex] = _instance;
+            freeInstances.Remove(_instance);
         }
 
         // -----------------------
