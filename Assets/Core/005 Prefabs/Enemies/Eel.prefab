@@ -622,8 +622,8 @@ MonoBehaviour:
   - {fileID: 1760522019}
   - {fileID: 1527303418}
   m_Bounds:
-    m_Center: {x: 0.011226833, y: 0.0076203346, z: 0}
-    m_Extent: {x: 0.81025636, y: 2.6207035, z: 0}
+    m_Center: {x: 0.011226773, y: 0.0076241493, z: 0}
+    m_Extent: {x: 0.81025624, y: 2.6207032, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &383687558
@@ -760,8 +760,8 @@ MonoBehaviour:
   - {fileID: 1759106050}
   - {fileID: 1299761815}
   m_Bounds:
-    m_Center: {x: 0.01017344, y: -0.0009688735, z: 0}
-    m_Extent: {x: 1.5242919, y: 0.5599855, z: 0}
+    m_Center: {x: 0.01017344, y: -0.0009689927, z: 0}
+    m_Extent: {x: 1.5242918, y: 0.5599854, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &525156420
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   - {fileID: 1352485682}
   m_Bounds:
     m_Center: {x: 0.014547825, y: -1.4329875, z: 0}
-    m_Extent: {x: 4.672684, y: 2.1103244, z: 0}
+    m_Extent: {x: 4.6726837, y: 2.1103241, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &862248488
@@ -1509,8 +1509,8 @@ MonoBehaviour:
   - {fileID: 912993590}
   - {fileID: 1832594130}
   m_Bounds:
-    m_Center: {x: 0.0055732727, y: -1.4067147, z: 0}
-    m_Extent: {x: 4.9497156, y: 2.4442787, z: 0}
+    m_Center: {x: 0.0055732727, y: -1.4067128, z: 0}
+    m_Extent: {x: 4.9497147, y: 2.4442785, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1278630263
@@ -1708,8 +1708,8 @@ MonoBehaviour:
   - {fileID: 1813384363}
   - {fileID: 278913702}
   m_Bounds:
-    m_Center: {x: 0.008734226, y: -0.3465683, z: 0}
-    m_Extent: {x: 2.3826156, y: 0.9455332, z: 0}
+    m_Center: {x: 0.008734226, y: -0.34657025, z: 0}
+    m_Extent: {x: 2.3826156, y: 0.94553316, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1496591768
@@ -2274,8 +2274,8 @@ MonoBehaviour:
   - {fileID: 292745080}
   - {fileID: 1534206550}
   m_Bounds:
-    m_Center: {x: 0.0031430721, y: -0.5999888, z: 0}
-    m_Extent: {x: 2.2763853, y: 1.4567968, z: 0}
+    m_Center: {x: 0.0031433105, y: -0.5999868, z: 0}
+    m_Extent: {x: 2.2763853, y: 1.4567966, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1988433406
@@ -2706,8 +2706,8 @@ MonoBehaviour:
   - {fileID: 1278630264}
   - {fileID: 1695825722}
   m_Bounds:
-    m_Center: {x: 0.054484606, y: -0.012475967, z: 0}
-    m_Extent: {x: 3.749422, y: 1.6724718, z: 0}
+    m_Center: {x: 0.054484367, y: -0.012475848, z: 0}
+    m_Extent: {x: 3.7494216, y: 1.6724716, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &5333181777042935249
@@ -3253,6 +3253,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4501342749873233526, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501342749873233526, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.136
+      objectReference: {fileID: 0}
     - target: {fileID: 4764019876357673921, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3385,6 +3393,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4314652897978039184, guid: 87e2b6015672b24448a42892e4ae38c1, type: 3}
+    - target: {fileID: 9152729037625088968, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152729037625088968, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
+      propertyPath: weaponsData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b57ec9d3a12a2a4b8611c705bd17815, type: 2}
     m_RemovedComponents:
     - {fileID: 7818846803460684159, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cfd4f7c10ad90e749b5e9a2f4900c61a, type: 3}

@@ -15,5 +15,10 @@ MonoBehaviour:
   projectiles: {fileID: 5205475488499081585, guid: 2f8b2749f6643c34d946fb6556a8ff18, type: 3}
   damages: 1
   fireRate: 0.1
-  fireClips: []
-  volumeScale: 0.1
+  fireClips:
+  - {fileID: 8300000, guid: 0a8d826174f61cf4b9d0e7c9cc7a5b5e, type: 3}
+  - {fileID: 8300000, guid: 9c8a1a89982fdb646b6cecc899777816, type: 3}
+  - {fileID: 8300000, guid: d8627b9065b2e4f45be37e3904a4ad84, type: 3}
+  - {fileID: 8300000, guid: 5a347a6cccb47a741ba6693deba688f9, type: 3}
+  collidingAudioClip: {fileID: 0}
+  volumeScale: 0.45
