@@ -24,7 +24,6 @@ namespace Shmup
         #region Methods
         public virtual void Fire()
         {
-            Debug.Log("Fire");
             if(weaponsAreReady)
             {
                 SoundManager.Instance.PlayClipAtPosition(weaponsData.GetRandomClip(), transform.position, weaponsData.VolumeScale);
