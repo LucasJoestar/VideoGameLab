@@ -45,8 +45,8 @@ namespace Shmup
                 Transform _parent = weaponsAnchor[_i];
 
                 _instance.transform.SetParent(_parent);
-                _instance.transform.position = Vector3.zero;
-                _instance.transform.rotation = _parent.rotation;
+                _instance.transform.localPosition = Vector3.zero;
+                _instance.transform.localRotation = Quaternion.identity;
 
                 systems[_i] = _instance;
 
