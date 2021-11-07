@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: 1946331542095008120
     second: HandThing
+  - first:
+      213: 7342355760805576673
+    second: Bras2BB
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1100,6 +1103,27 @@ TextureImporter:
       bones: []
       spriteID: 87116b5b932c20b10800000000000000
       internalID: 1946331542095008120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bras2BB
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 449
+        width: 145
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1effb59b9a945e560800000000000000
+      internalID: 7342355760805576673
       vertices: []
       indices: 
       edges: []
