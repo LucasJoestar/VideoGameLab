@@ -6,8 +6,9 @@ namespace Shmup
     public class ScoreManager : MonoBehaviour
     {
         #region Fields and Properties
-        public static ScoreManager Instance = null; 
+        public static ScoreManager Instance = null;
 
+        public event Action<PlayerUpgradeType, float> OnUpgradeUnlocked;
         private int totalScore = 0;
         private int lastScore = 0;
         private int currentUpdateIndex = 0; 
@@ -21,13 +22,13 @@ namespace Shmup
             lastScore += _increasingValue;
             totalScore += _increasingValue;
             float _ratio = (float)lastScore / (float)upgrades[upgrades.Length - 1].ScoreThreshold;
-            while (_ratio > 1)
+
+            if (currentUpdateIndex < upgrades.Length && lastScore >= upgrades[currentUpdateIndex].ScoreThreshold)
             {
+                OnUpgradeUnlocked?.Invoke(upgrades[currentUpdateIndex].Upgrade, upgrades[currentUpdateIndex].IncreasingValue);
                 currentUpdateIndex++;
-                if (currentUpdateIndex >= upgrades.Length)
-                    break;
-                _ratio = (float)lastScore / (float)upgrades[upgrades.Length -1].ScoreThreshold;
             }
+
             ui.UpdateScoreUI(totalScore, _ratio);
         }
 

@@ -13,16 +13,16 @@ namespace Shmup
     {
         #region Global Members
         [Header("REFERENCES")]
-
         [SerializeField] private PlayerAttributes attributes = null;
         [SerializeField] private new Rigidbody rigidbody = null;
         [SerializeField] private new SphereCollider collider = null;
+        [SerializeField] private PlayerDamageable playerDamageable = null; 
+        [Space(5f)]
+        [SerializeField] private LayerMask collisionMask = new LayerMask();
+        [Header("Weapons")]
         [SerializeField] private PlayerWeapons mainWeapons = null;
         [SerializeField] private Weapons secondaryWeapon = null;
         [SerializeField] private Bomb bomb = null;
-        [Space(5f)]
-
-        [SerializeField] private LayerMask collisionMask = new LayerMask();
         #endregion
 
         #region Inputs
@@ -119,6 +119,26 @@ namespace Shmup
         }
         #endregion
 
+        #region Upgrade
+        private void UpgradePlayer(PlayerUpgradeType _type, float _value)
+        {
+            switch (_type)
+            {
+                case PlayerUpgradeType.Shield:
+                    playerDamageable.ActivateShield();
+                    break;
+                case PlayerUpgradeType.IncreaseFireRate:
+                    mainWeapons.IncreaseFireRate(_value);
+                    break;
+                case PlayerUpgradeType.IncreaseProjectileSize:
+                    mainWeapons.IncreaseProjectileSize(_value);
+                    break;
+                default:
+                    break;
+            }
+        }
+        #endregion
+
         #region Mono Behaviour
         private void Awake()
         {
@@ -127,6 +147,11 @@ namespace Shmup
             attributes.FireMainInput.Enable();
             attributes.FireSecondaryInput.Enable();
             attributes.FireBombInput.Enable();
+        }
+
+        private void Start()
+        {
+            ScoreManager.Instance.OnUpgradeUnlocked += UpgradePlayer;
         }
 
         private void Update()
@@ -141,6 +166,8 @@ namespace Shmup
             attributes.FireMainInput.Disable();
             attributes.FireSecondaryInput.Disable();
             attributes.FireBombInput.Disable();
+
+            ScoreManager.Instance.OnUpgradeUnlocked -= UpgradePlayer;
         }
         #endregion
     }

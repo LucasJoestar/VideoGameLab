@@ -173,6 +173,10 @@ PrefabInstance:
       propertyPath: blinkDuration
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 8528006561433980515, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: playerDamageable
+      value: 
+      objectReference: {fileID: 1204614920}
     - target: {fileID: 8528006561433980540, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -823,6 +827,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1204614920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7019414584344825113, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+  m_PrefabInstance: {fileID: 226605935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3d96318bd781c46af9656ca50c3385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499228864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,17 +1107,17 @@ MonoBehaviour:
     upgrade: 0
     increasingValue: 1
   - fillColor: {r: 1, g: 0, b: 0, a: 1}
-    scoreThreshold: 2000
+    scoreThreshold: 200
     upgrade: 1
     increasingValue: 1.25
   - fillColor: {r: 1, g: 0, b: 0, a: 1}
-    scoreThreshold: 5000
+    scoreThreshold: 300
     upgrade: 1
     increasingValue: 1.5
   - fillColor: {r: 1, g: 0, b: 0, a: 1}
-    scoreThreshold: 10000
+    scoreThreshold: 400
     upgrade: 2
-    increasingValue: 1.25
+    increasingValue: 2
   ui: {fileID: 454778785}
 --- !u!4 &2068554675
 Transform:
@@ -1130,6 +1145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484e65ad3d3bd174280e79d2e0af789b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partOne: {fileID: 0}
+  partTwo: {fileID: 0}
   IsLive: 0
 --- !u!1001 &4135762772058449896
 PrefabInstance:

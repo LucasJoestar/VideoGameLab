@@ -15,7 +15,7 @@ namespace Shmup
         #endregion
 
         #region Methods
-        private void Init()
+        protected virtual void Init()
         {
             systems = new ParticleSystem[weaponsAnchor.Length];
             for (int i = 0; i < weaponsAnchor.Length; i++)

@@ -40,6 +40,12 @@ namespace Shmup
             }
             _sequence.Play();
         }
+
+        public void ActivateShield()
+        {
+            hasShield = true; 
+            // Activate VFX
+        }
         #endregion
     }
 }
