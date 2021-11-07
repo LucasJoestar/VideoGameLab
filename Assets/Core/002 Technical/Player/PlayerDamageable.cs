@@ -12,16 +12,6 @@ namespace Shmup
     public class PlayerDamageable : Damageable
     {
         #region Methods
-        public void AddShield()
-        {
-            if (health == 1)
-            {
-                health = 2;
-
-                // Instantiate shield.
-            }
-        }
-
         public override bool TakeDamages(int _damages)
         {
             bool _isDead = TakeDamages(_damages);
@@ -47,6 +37,16 @@ namespace Shmup
         {
             base.OnDestroyed();
             GameManager.Instance.Defeat();
+        }
+
+        public void ActivateShield()
+        {
+            if (health == 1)
+            {
+                health = 2;
+
+                // Instantiate shield.
+            }
         }
         #endregion
     }

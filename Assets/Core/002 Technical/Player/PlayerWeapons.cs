@@ -1,9 +1,3 @@
-// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
-//
-// Notes:
-//
-// ================================================================================== //
-
 using UnityEngine;
 
 namespace Shmup
@@ -14,10 +8,21 @@ namespace Shmup
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
 
-        public bool IsAutoFiring => isAutoFiring;
+        private float baseFireRate = 0;
+        private float baseProjectileSize = 0;
         #endregion
 
         #region Methods
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            for (int i = 0; i < systems.Length; i++)
+            {
+                baseFireRate = systems[i].MainParticles.emission.rateOverTimeMultiplier;
+                baseProjectileSize = systems[i].MainParticles.main.startSizeMultiplier;
+            }
+        }
+
         public override void Fire()
         {
             if (useAutoFire)
@@ -38,8 +43,25 @@ namespace Shmup
                     }
                 }
             }
-            else
-                base.Fire();
+            else base.Fire();
+        }
+
+        public void IncreaseFireRate(float _multiplier)
+        {
+            for (int i = 0; i < systems.Length; i++)
+            {
+                ParticleSystem.EmissionModule _emissionModule = systems[i].MainParticles.emission;
+                _emissionModule.rateOverTimeMultiplier = baseFireRate * _multiplier; 
+            }
+        }
+
+        public void IncreaseProjectileSize(float _multiplier)
+        {
+            for (int i = 0; i < systems.Length; i++)
+            {
+                ParticleSystem.MainModule _emissionModule = systems[i].MainParticles.main;
+                _emissionModule.startSizeMultiplier = baseProjectileSize * _multiplier;
+            }
         }
         #endregion
     }

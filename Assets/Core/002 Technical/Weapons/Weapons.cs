@@ -37,7 +37,7 @@ namespace Shmup
             systems = new PoolableParticle[weaponsAnchor.Length];
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             for (int _i = 0; _i < weaponsAnchor.Length; _i++)
             {
@@ -55,7 +55,7 @@ namespace Shmup
             }
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             if (Application.isPlaying)
             {
