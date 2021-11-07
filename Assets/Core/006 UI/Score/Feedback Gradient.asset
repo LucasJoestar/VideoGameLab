@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
-  m_Name: Eel_Laser
+  m_Script: {fileID: 11500000, guid: 54d21f6ece3b46479f0c328f8c6007e0, type: 3}
+  m_Name: Feedback Gradient
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 5205475488499081585, guid: 2f8b2749f6643c34d946fb6556a8ff18, type: 3}
-  damages: 1
-  fireRate: 0.1
-  fireClips: []
-  volumeScale: 0.1
+  colorMode: 0
+  topLeft: {r: 1, g: 1, b: 1, a: 1}
+  topRight: {r: 1, g: 1, b: 1, a: 1}
+  bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+  bottomRight: {r: 1, g: 1, b: 1, a: 1}

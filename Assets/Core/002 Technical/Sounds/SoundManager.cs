@@ -8,7 +8,7 @@ namespace Shmup
     {
         #region Fields and Properties
         public static SoundManager Instance = null;
-        private Pool<PoolableAudioSource> pool = new Pool<PoolableAudioSource>(2);
+        private static readonly Pool<PoolableAudioSource> pool = new Pool<PoolableAudioSource>(2);
         [SerializeField] private PoolableAudioSource baseSource = null;
         #endregion
 

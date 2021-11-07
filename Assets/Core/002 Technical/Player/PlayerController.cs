@@ -134,7 +134,7 @@ namespace Shmup
         #endregion
 
         #region Upgrade
-        private void UpgradePlayer(PlayerUpgradeType _type, float _value)
+        public void UpgradePlayer(PlayerUpgradeType _type, float _value)
         {
             switch (_type)
             {
@@ -163,11 +163,6 @@ namespace Shmup
             attributes.FireBombInput.Enable();
         }
 
-        private void Start()
-        {
-            ScoreManager.Instance.OnUpgradeUnlocked += UpgradePlayer;
-        }
-
         private void Update()
         {
             InputUpdate();
@@ -180,8 +175,6 @@ namespace Shmup
             attributes.FireMainInput.Disable();
             attributes.FireSecondaryInput.Disable();
             attributes.FireBombInput.Disable();
-
-            ScoreManager.Instance.OnUpgradeUnlocked -= UpgradePlayer;
         }
         #endregion
     }

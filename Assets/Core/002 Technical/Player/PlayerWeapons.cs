@@ -17,11 +17,8 @@ namespace Shmup
         protected override void OnEnable()
         {
             base.OnEnable();
-            for (int i = 0; i < systems.Length; i++)
-            {
-                //baseFireRate = systems[i].MainParticles.emission.rateOverTimeMultiplier;
-                //baseProjectileSize = systems[i].MainParticles.main.startSizeMultiplier;
-            }
+            baseFireRate = 1.0f;
+            baseProjectileSize = 1.0f;     
         }
 
         public override void Fire()
@@ -39,6 +36,7 @@ namespace Shmup
                     {
                         autoFireSequence.Kill();
                     }
+                    
                 }
             }
             else base.Fire();

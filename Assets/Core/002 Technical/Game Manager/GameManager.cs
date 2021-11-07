@@ -19,6 +19,7 @@ namespace Shmup
         [Header("REFERENCES")]
 
         [SerializeField] private GameMenus menus = null;
+        [SerializeField] private ScoreManager score = null;
         [SerializeField] private PlayerDamageable player = null;
 
         [Header("TIMELINES")]
@@ -41,6 +42,7 @@ namespace Shmup
             {
                 IsLive = true;
                 player.ResetPlayer();
+                score.ResetScore();
 
                 partOne.Play();
             }
