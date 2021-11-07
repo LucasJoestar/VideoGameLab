@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
-  m_Name: Eel_Laser
+  m_Script: {fileID: 11500000, guid: 11b8bf655c3f85f44b119b5e4a5e19c1, type: 3}
+  m_Name: Charge Data
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 5205475488499081585, guid: 47057cb4191e75847916f4cb26fa464c, type: 3}
-  damages: 1
-  fireRate: 0.1
-  fireClips: []
-  volumeScale: 0.1
+  ShakeDuration: 1
+  ShakeStrength: 1
+  ChargingSpeed: 1
+  ReturnSpeed: 1

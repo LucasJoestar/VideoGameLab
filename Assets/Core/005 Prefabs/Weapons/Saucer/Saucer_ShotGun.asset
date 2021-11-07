@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectiles: {fileID: 6927803358270619148, guid: cf4f667101ea2994ba32209861e42320, type: 3}
   damages: 10
+  fireRate: 2
   fireClips:
   - {fileID: 8300000, guid: 997eb869c45cd1c4283543752db63a95, type: 3}
   - {fileID: 8300000, guid: 9044dc64ccba7b740a8221432b680b52, type: 3}

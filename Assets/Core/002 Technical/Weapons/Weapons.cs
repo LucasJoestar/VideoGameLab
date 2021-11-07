@@ -17,16 +17,32 @@ namespace Shmup
 
         protected PoolableParticle[] systems = new PoolableParticle[] { };
 
-        public WeaponsData WeaponsData => weaponsData; 
+        public WeaponsData WeaponsData => weaponsData;
+        private bool weaponsAreReady = false;
         #endregion
 
         #region Methods
         public virtual void Fire()
         {
-            SoundManager.Instance.PlayClipAtPosition(weaponsData.GetRandomClip(), transform.position, weaponsData.VolumeScale);
-            for (int _i = 0; _i < systems.Length; _i++)
+            Debug.Log("Fire");
+            if(weaponsAreReady)
             {
-                systems[_i].MainParticles.Play();
+                SoundManager.Instance.PlayClipAtPosition(weaponsData.GetRandomClip(), transform.position, weaponsData.VolumeScale);
+                for (int _i = 0; _i < systems.Length; _i++)
+                {
+                    systems[_i].MainParticles.Play(true);
+                }
+            }
+        }
+
+        public virtual void CancelFire()
+        {
+            if(weaponsAreReady)
+            {
+                for (int _i = 0; _i < systems.Length; _i++)
+                {
+                    systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                }
             }
         }
         #endregion
@@ -54,6 +70,7 @@ namespace Shmup
                 ParticleSystem.CollisionModule _module = systems[_i].MainParticles.collision;
                 _module.collidesWith = targetMask;
             }
+            weaponsAreReady = true;
         }
 
         private void Update()
@@ -76,6 +93,7 @@ namespace Shmup
                         systems[_i].SendToPoolOnInvisible = true;
                     }
                 }
+                weaponsAreReady = false;
             }
         }
         #endregion 
