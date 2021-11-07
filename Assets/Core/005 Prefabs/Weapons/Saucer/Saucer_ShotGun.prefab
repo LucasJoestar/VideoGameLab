@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4625240752999134696}
   - component: {fileID: 6972274675149976134}
   - component: {fileID: 1840486965929643208}
-  - component: {fileID: -8294519786648838566}
+  - component: {fileID: 6927803358270619148}
   m_Layer: 0
   m_Name: Saucer_ShotGun
   m_TagString: Untagged
@@ -4863,7 +4863,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &-8294519786648838566
+--- !u!114 &6927803358270619148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4872,7 +4872,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 107607457035484864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5122660ce7d8ba84db36507587c43a4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6232c09919fb742489c5d1e2e45d7b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MainParticles: {fileID: 6972274675149976134}
+  IsInPool: 0
+  SendToPoolOnInvisible: 0
+  weaponsData: {fileID: 11400000, guid: 63875e2cbef4de34d9d04a653dc5fbd5, type: 2}
