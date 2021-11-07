@@ -29,26 +29,30 @@ namespace Shmup
 
         #region Game Life
         public bool IsLive = false;
+        public static bool IsQuitting = false;
+
         private Sequence endSequence = null;
 
         // -----------------------
 
         public void StartRun()
         {
-            IsLive = true;
+            if (!IsLive)
+            {
+                IsLive = true;
+                player.ResetPlayer();
 
-            partOne.Play();
-
-            player.ResetPlayer();
+                partOne.Play();
+            }
         }
 
         public void Restart()
         {
+            IsLive = false;
             Pool.ResetAll();
 
             partOne.Stop();
             partTwo.Stop();
-
 
             StartRun();
         }
@@ -116,6 +120,11 @@ namespace Shmup
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+        }
+
+        private void OnApplicationQuit()
+        {
+            IsQuitting = true;
         }
         #endregion
     }

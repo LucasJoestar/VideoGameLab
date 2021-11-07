@@ -66,7 +66,7 @@ namespace Shmup
 
         protected virtual void OnDisable()
         {
-            if (Application.isPlaying)
+            if (!GameManager.IsQuitting)
             {
                 for (int _i = 0; _i < systems.Length; _i++)
                 {

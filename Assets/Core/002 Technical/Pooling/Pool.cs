@@ -121,7 +121,7 @@ namespace Shmup
             if (_doDestroy)
             {
                 foreach (T _object in pool)
-                    Object.Destroy(_object);
+                    Object.Destroy(_object.gameObject);
             }
 
             pool = new T[] { };

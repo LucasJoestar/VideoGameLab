@@ -12,10 +12,7 @@ public class BasicController : MonoBehaviour
     GameObject secondaryFirePoint;
 
     GameObject spawnedPrimary;
-    GameObject spawnedSecondary;
-
-
-
+    GameObject spawnedSecondary;    
 
 
     void DisablePrimary()
@@ -112,5 +109,6 @@ public class BasicController : MonoBehaviour
         {
             transform.position += Vector3.down * Time.deltaTime * 10;
         }
-    }
+        
+    } 
 }

@@ -19,16 +19,40 @@ MonoBehaviour:
   OpenTitleOriginalPos: 450
   OpenTitleDestinationPos: 0
   OpenTitleDelay: 0.3
-  OpenTitleMovementDuration: 0.2
-  OpenTitleMovementEase: 6
-  OpenFlashDelay: 0.55
+  OpenTitleMovementDuration: 0.22
+  OpenTitleMovementEase: 27
+  OpenBackgroundFadeDelay: 0
+  OpenBackgroundFadeDuration: 0.2
+  OpenBackgroundFadeEase: 6
+  OpenButtonFadeDelay: 0.7
+  OpenButtonFadeDuration: 0.2
+  OpenButtonFadeEase: 12
+  OpenGlobalFadeDelay: 0
+  OpenGlobalFadeDuration: 0.25
+  OpenGlobalFadeEase: 6
   CloseDuration: 0.2
   CloseEase: 5
-  CloseFlashDelay: 0.25
+  CloseFadeDelay: 0.1
+  CloseFadeDuration: 0.15
+  CloseFadeEase: 8
+  CreditsPos: 500
+  CreditsShowDuration: 0.25
+  CreditsShowEase: 3
+  CreditsCloseDuration: 0.25
+  CreditsCloseEase: 26
+  ControlsPos: -500
+  ControlsShowDuration: 0.25
+  ControlsShowEase: 3
+  ControlsCloseDuration: 0.25
+  ControlsCloseEase: 26
+  FlashDelay: 0.1
   FlashStretchDuration: 0.1
   FlashStretchEase: 5
-  FlashFadeDuration: 0.08
+  FlashFadeDuration: 0.1
   FlashFadeEase: 2
+  SelectionOffset: 40
+  SelectionRotationDuration: 3
+  SelectionRotationEase: 1
   OpenMenuInput:
     m_Name: Open Menu Input
     m_Type: 0
