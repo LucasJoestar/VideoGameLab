@@ -1,3 +1,9 @@
+// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
+//
+// Notes:
+//
+// ================================================================================== //
+
 using UnityEngine;
 using DG.Tweening; 
 

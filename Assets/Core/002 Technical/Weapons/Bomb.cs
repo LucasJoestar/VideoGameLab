@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
+//
+// Notes:
+//
+// ================================================================================== //
+
 using UnityEngine;
 
 namespace Shmup
@@ -12,6 +16,7 @@ namespace Shmup
 
         #region Methods
         private RaycastHit[] hits = new RaycastHit[] { }; 
+
         public override void Fire()
         {
             base.Fire();

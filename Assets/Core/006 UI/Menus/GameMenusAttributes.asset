@@ -45,3 +45,27 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Open Menu Input
       m_Flags: 0
+    - m_Name: 
+      m_Id: 72250350-9da9-4e00-8165-91208152e1fd
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Open Menu Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: eb648d12-2574-4b8e-be21-f9cb7e7ae315
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Open Menu Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 30c577cd-96fd-454a-acb3-add402173fb8
+      m_Path: <Gamepad>/select
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Open Menu Input
+      m_Flags: 0

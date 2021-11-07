@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
+//
+// Notes:
+//
+// ================================================================================== //
+
 using UnityEngine;
 
 namespace Shmup
@@ -10,43 +14,57 @@ namespace Shmup
         [SerializeField] protected WeaponsData weaponsData = null;
         [SerializeField] private LayerMask targetMask = new LayerMask();
         [SerializeField] private Transform[] weaponsAnchor = new Transform[] { };
-        protected ParticleSystem[] systems = new ParticleSystem[] { };
+
+        protected PoolableParticle[] systems = new PoolableParticle[] { };
+
         public WeaponsData WeaponsData => weaponsData; 
         #endregion
 
         #region Methods
-        private void Init()
-        {
-            systems = new ParticleSystem[weaponsAnchor.Length];
-            for (int i = 0; i < weaponsAnchor.Length; i++)
+        public virtual void Fire()
+        { 
+            for (int _i = 0; _i < systems.Length; _i++)
             {
-                systems[i] = Instantiate(weaponsData.Projectiles, weaponsAnchor[i]) ;
-                ParticleSystem.CollisionModule _module = systems[i].collision;
+                systems[_i].MainParticles.Play();
+                // systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting); 
+            }
+        }
+        #endregion
+
+        #region Mono Behaviour
+        private void Awake()
+        {
+            systems = new PoolableParticle[weaponsAnchor.Length];
+        }
+
+        protected virtual void OnEnable()
+        {
+            for (int _i = 0; _i < weaponsAnchor.Length; _i++)
+            {
+                var _instance = weaponsData.GetInstance();
+                Transform _parent = weaponsAnchor[_i];
+
+                _instance.transform.SetParent(_parent);
+                _instance.transform.localPosition = Vector3.zero;
+                _instance.transform.localRotation = Quaternion.identity;
+
+                systems[_i] = _instance;
+
+                ParticleSystem.CollisionModule _module = systems[_i].MainParticles.collision;
                 _module.collidesWith = targetMask;
             }
         }
 
-        public virtual void Fire()
-        { 
-            for (int i = 0; i < systems.Length; i++)
-            {
-                systems[i].Play();
-                // systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting); 
-            }
-        }
-
-        private void Awake()
+        protected virtual void OnDisable()
         {
-            Init();
-        }
-
-        private void OnDisable()
-        {
-            if(Application.isPlaying)
+            if (Application.isPlaying)
             {
-                for (int i = 0; i < systems.Length; i++)
+                for (int _i = 0; _i < systems.Length; _i++)
                 {
-                    systems[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    //systems[i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+
+                    var _instance = weaponsData.GetInstance();
+                    weaponsData.Pool.SendToPool(_instance);
                 }
             }
         }

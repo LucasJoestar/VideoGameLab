@@ -1,5 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+// ===== Video Game Lab Game Jam - https://github.com/LucasJoestar/VideoGameLab ===== //
+//
+// Notes:
+//
+// ================================================================================== //
+
 using UnityEngine;
 using DG.Tweening; 
 
@@ -7,38 +11,54 @@ namespace Shmup
 {
     public class PlayerDamageable : Damageable
     {
-        #region Fields and properties
-        [SerializeField] private bool hasShield = false;
-        #endregion
+        #region Damages
+        [SerializeField] protected new Collider collider = null;
+        private bool hasShield = false;
 
-        #region Methods
-        protected override void OnTakeDamages(int _damages)
+        // -----------------------
+
+        public override bool TakeDamages(int _damages)
         {
-            // Si shield > Destruction shield 
-            Sequence _sequence = DOTween.Sequence();
-            // Player Blinking
-            collider.enabled = false; 
-            _sequence.Join(CameraAspectRatio.Instance.Camera.transform.DOShakePosition(0.05f * blinkLoopCount * 2, .15f)) ;
-            _sequence.Join(sprite.DOFade(0.0f, UniqueBlinkDuration).SetLoops(blinkLoopCount * 2, LoopType.Yoyo));
-            _sequence.OnComplete(() => collider.enabled = true); 
-
-            if(hasShield)
+            // No damage when having a shield.
+            if (hasShield)
             {
+                _damages = 0;
                 hasShield = false;
-                // Destroy VFX shield
-                return; 
             }
-            else // Player is dying here
+
+            bool _isDead = TakeDamages(_damages);
+            collider.enabled = false;
+
+            sequence.Join(CameraAspectRatio.Instance.Camera.transform.DOShakePosition(0.05f * blinkLoopCount * 2, .15f));
+            sequence.AppendCallback(() =>
             {
-                // Explosion FX + Destruction + screen shake
-                _sequence.OnComplete(() => Destroy(gameObject));
-                // Game Over 
-                for (int i = 0; i < disabledComponents.Length; i++)
-                {
-                    disabledComponents[i].enabled = false; 
-                }
+                collider.enabled = true;
+            });
+
+            return _isDead;
+        }
+
+        protected override void OnTakeDamages()
+        {
+            base.OnTakeDamages();
+
+            // Destroy shield.
+        }
+
+        protected override void OnDestroyed()
+        {
+            base.OnDestroyed();
+            GameManager.Instance.Defeat();
+        }
+
+        public void ActivateShield()
+        {
+            if (!hasShield)
+            {
+                hasShield = true;
+
+                // Instantiate shield.
             }
-            _sequence.Play();
         }
         #endregion
     }

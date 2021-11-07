@@ -4,6 +4,8 @@
 //
 // ================================================================================== //
 
+using DG.Tweening;
+using System;
 using UnityEngine.Playables;
 using UnityEngine;
 
@@ -14,12 +16,19 @@ namespace Shmup
         #region Global Members
         public static GameManager Instance { get; private set; }
 
+        [Header("REFERENCES")]
+
+        [SerializeField] private GameMenus menus = null;
+
+        [Header("TIMELINES")]
+
         [SerializeField] private PlayableDirector partOne = null;
         [SerializeField] private PlayableDirector partTwo = null;
         #endregion
 
         #region Game Life
         public bool IsLive = false;
+        private Sequence endSequence = null;
 
         // -----------------------
 
@@ -32,17 +41,64 @@ namespace Shmup
 
         public void Restart()
         {
-            IsLive = true;
+            Pool.ResetAll();
 
             partOne.Stop();
             partTwo.Stop();
 
-            partOne.Play();
+            StartRun();
         }
 
-        public void Stop()
+        public void Victory()
         {
-            IsLive = false;
+            Stop(menus.OpenVictory);
+        }
+
+        public void Defeat()
+        {
+            Stop(menus.OpenDefeat);
+        }
+
+        private void Stop(Action _callback)
+        {
+            if (endSequence.IsPlaying())
+                return;
+
+            endSequence = DOTween.Sequence();
+            endSequence.AppendInterval(1f);
+            endSequence.AppendCallback(() =>
+            {
+                IsLive = false;
+
+                partOne.Pause();
+                partTwo.Pause();
+
+                _callback();
+            });
+
+            endSequence.Play();
+        }
+        #endregion
+
+        #region Level
+        public void OnMiniBossSpawn()
+        {
+
+        }
+
+        public void OnMiniBossDefeated()
+        {
+
+        }
+
+        public void OnBossSpawn()
+        {
+
+        }
+
+        public void OnBossDefeated()
+        {
+
         }
         #endregion
 
