@@ -286,13 +286,13 @@ namespace Shmup
                 title.gameObject.SetActive(false);
                 titleText.gameObject.SetActive(true);
                 titleText.text = (_variation == 1)
-                               ? "You Are One of Them"
-                               : "Invasion Defeated";
+                               ? "You Died Miserably"
+                               : "Congratulations!";
 
                 playButton.transform.parent.gameObject.SetActive(false);
                 restartButton.transform.parent.gameObject.SetActive(true);
                 restartButton.text = (_variation == 1)
-                                   ? "Retry"
+                                   ? "Try Again"
                                    : "Beat That Score";
 
                 menuRoot.gameObject.SetActive(false);
