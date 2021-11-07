@@ -44,7 +44,7 @@ namespace Shmup
                 var _instance = weaponsData.GetInstance();
                 Transform _parent = weaponsAnchor[_i];
 
-                _instance.transform.SetParent(_parent);
+                _instance.transform.SetParent(_parent, true);
                 _instance.transform.localPosition = Vector3.zero;
                 _instance.transform.localRotation = Quaternion.identity;
 
@@ -63,7 +63,7 @@ namespace Shmup
                 {
                     //systems[i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
 
-                    var _instance = weaponsData.GetInstance();
+                    var _instance = systems[_i];
                     weaponsData.Pool.SendToPool(_instance);
                 }
             }
