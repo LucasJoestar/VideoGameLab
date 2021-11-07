@@ -21,3 +21,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 77153d70a1e548c469d2148aa48031bf, type: 3}
   collidingAudioClip: {fileID: 8300000, guid: 1acb1cba1754cef41853660d1f8cd701, type: 3}
   volumeScale: 0.4
+  weaponSprite: {fileID: -4709456396536258026, guid: ac2354991f4e1014b880ec1ab59c0116, type: 3}
+  ammo: 10

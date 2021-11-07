@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eef5f5f7f22164f9cfda18fc6a33eb, type: 3}
   m_Name: Scarab_Spiral
   m_EditorClassIdentifier: 
-  projectiles: {fileID: 0}
-  damages: 1
+  projectiles: {fileID: 2541770428961614188, guid: a240d88dda9ffa14293166f399c16da6, type: 3}
+  damages: 5
+  fireRate: 1
+  fireClips: []
+  collidingAudioClip: {fileID: 0}
+  volumeScale: 0.5

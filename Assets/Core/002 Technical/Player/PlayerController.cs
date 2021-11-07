@@ -151,6 +151,11 @@ namespace Shmup
                     break;
             }
         }
+
+        public void SetSecondaryWeapon(WeaponsData _data, Sprite _weaponSprite)
+        {
+            // secondaryWeapon.SetWeapons(_data);
+        }
         #endregion
 
         #region Mono Behaviour
