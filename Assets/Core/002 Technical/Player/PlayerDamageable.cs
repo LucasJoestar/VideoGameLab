@@ -84,6 +84,9 @@ namespace Shmup
 
         public void ResetPlayer()
         {
+            gameObject.SetActive(false);
+            gameObject.SetActive(true);
+
             controller.enabled = false;
             collider.enabled = false;
 

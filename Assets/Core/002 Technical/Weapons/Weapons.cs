@@ -63,7 +63,7 @@ namespace Shmup
             {
                 var _instance = weaponsData.GetInstance();
                 Transform _parent = weaponsAnchor[_i];
-                
+
                 _instance.transform.position = weaponsAnchor[_i].transform.position;
                 _instance.transform.rotation = weaponsAnchor[_i].transform.rotation;
 
