@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3767920193205386198}
-  - component: {fileID: 1226009806567444125}
-  - component: {fileID: 2767479455424074636}
   m_Layer: 5
   m_Name: AMMO
   m_TagString: Untagged
@@ -39,61 +37,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1226009806567444125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767920193205386199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1174333ec6881f6408324402012a54db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 0f78c6b7a6b8a294db9340c18e526b3a, type: 2}
-  player: {fileID: 0}
-  gauge: {fileID: 2767479455424074636}
-  multiplier: {fileID: 3010946679581722876}
-  scoreRoot: {fileID: 0}
-  scoreTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  upgrades:
-  - fillColor: {r: 1, g: 0, b: 0, a: 1}
-    scoreThreshold: 0
-    upgrade: 0
-    increasingValue: 0
-  - fillColor: {r: 0, g: 0, b: 0, a: 0}
-    scoreThreshold: 0
-    upgrade: 0
-    increasingValue: 0
-  multiplierTreshold: 100
---- !u!114 &2767479455424074636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767920193205386199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfbc3fabd75a714b94f5b9e8a7ff18a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 0f78c6b7a6b8a294db9340c18e526b3a, type: 2}
-  background: {fileID: 0}
-  fill: {fileID: 0}
-  feedback: {fileID: 0}
-  fillingSpeed: 1
 --- !u!1 &4789628144820098860
 GameObject:
   m_ObjectHideFlags: 0

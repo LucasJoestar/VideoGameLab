@@ -68,21 +68,45 @@ namespace Shmup
         [Range(0f, 2f)] public float MutliplierFlashDelay = .1f;
         [Range(0f, 5f)] public float MutliplierFlashDuration = 1f;
 
-        [Space(10f), Header("GAUGE")]
+        [Space(10f), Header("GAUGE INCREASE")]
 
         [Range(0f, 2f)] public float GaugeIncreaseDuration = .2f;
         public Ease GaugeIncreaseEase = Ease.Linear;
 
         [Space(5f)]
 
-        [Range(0f, 2f)] public float GaugeFillDelay = .1f;
         [Range(0f, 5f)] public float GaugeFillDuration = 1f;
         public Ease GaugeFillEase = Ease.Linear;
 
         [Space(5)]
 
-        public ShakeTween increaseShake = new ShakeTween();
+        public ShakeTween IncreaseShake = new ShakeTween();
         public ShakeTween filledShake = new ShakeTween();
+
+        [Space(5f)]
+
+        [Range(0f, 2f)] public float GaugeCompleteDuration = .2f;
+        public Ease GaugeCompleteEase = Ease.Linear;
+
+        [Space(5f)]
+
+        [Range(0f, 5f)] public float GaugeCompleteFillDuration = 1f;
+        public Ease GaugeCompleteFillEase = Ease.Linear;
+
+        [Space(10f), Header("GAUGE DECREASE")]
+
+        [Range(0f, 2f)] public float GaugUncolorDuration = .2f;
+        public Ease GaugeUncolorEase = Ease.Linear;
+
+        [Space(5f)]
+
+        [Range(0f, 2f)] public float GaugeDecreaseDuration = .2f;
+        public Ease GaugeDecreaseEase = Ease.Linear;
+
+        [Space(5f)]
+
+        [Range(0f, 5f)] public float GaugeUnfillDuration = 1f;
+        public Ease GaugeUnfillEase = Ease.Linear;
         #endregion
     }
 }

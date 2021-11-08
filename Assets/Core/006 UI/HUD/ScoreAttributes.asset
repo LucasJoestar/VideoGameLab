@@ -104,24 +104,33 @@ MonoBehaviour:
   MultiplierGradient: {fileID: 11400000, guid: 83808cb46b47f9f409e159199c6aa055, type: 2}
   MutliplierFlashDelay: 0.1
   MutliplierFlashDuration: 0.1
-  GaugeIncreaseDuration: 0.2
-  GaugeIncreaseEase: 1
-  GaugeFillDelay: 0.1
-  GaugeFillDuration: 1
-  GaugeFillEase: 1
-  increaseShake:
-    Duration: 0.1
-    Strength: 1
-    Vibrato: 10
-    Randomness: 90
+  GaugeIncreaseDuration: 0.1
+  GaugeIncreaseEase: 27
+  GaugeFillDuration: 0.25
+  GaugeFillEase: 8
+  IncreaseShake:
+    Duration: 0.2
+    Strength: 7
+    Vibrato: 50
+    Randomness: 5
     Snapping: 1
     FadeOut: 1
     Ease: 1
   filledShake:
-    Duration: 0.1
-    Strength: 1
-    Vibrato: 10
-    Randomness: 90
+    Duration: 0.3
+    Strength: 12
+    Vibrato: 90
+    Randomness: 5
     Snapping: 1
     FadeOut: 1
     Ease: 1
+  GaugeCompleteDuration: 0.3
+  GaugeCompleteEase: 8
+  GaugeCompleteFillDuration: 0.5
+  GaugeCompleteFillEase: 11
+  GaugUncolorDuration: 0.1
+  GaugeUncolorEase: 2
+  GaugeDecreaseDuration: 0.2
+  GaugeDecreaseEase: 5
+  GaugeUnfillDuration: 0.5
+  GaugeUnfillEase: 8

@@ -809,6 +809,26 @@ PrefabInstance:
       propertyPath: m_IgnoreLayout
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3923329722705720609, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
+      propertyPath: upgrades.Array.data[0].scoreThreshold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923329722705720609, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
+      propertyPath: upgrades.Array.data[1].scoreThreshold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923329722705720609, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
+      propertyPath: upgrades.Array.data[2].scoreThreshold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923329722705720609, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
+      propertyPath: upgrades.Array.data[3].scoreThreshold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923329722705720609, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
+      propertyPath: upgrades.Array.data[4].scoreThreshold
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5018575830735583989, guid: 5169d6b15f83c774e82c339f2cc7c0e2, type: 3}
       propertyPath: m_IgnoreLayout
       value: 1

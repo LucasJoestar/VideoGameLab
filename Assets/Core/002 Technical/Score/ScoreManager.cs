@@ -58,7 +58,9 @@ namespace Shmup
         private long score = 0;
         private long lastScore = 0;
         private float multiplierValue = 1f;
+
         private long scoreMultiplierHelper = 0;
+        private long scoreGaugeHelper = 0;
 
         private int currentUpdateIndex = 0;
         #endregion
@@ -81,18 +83,29 @@ namespace Shmup
                 IncreaseMultiplier(_coef);
             }
 
-            float _ratio = (float)lastScore / upgrades[upgrades.Length - 1].ScoreThreshold;
-
             // Gauge update.
-            if (currentUpdateIndex < upgrades.Length && lastScore >= upgrades[currentUpdateIndex].ScoreThreshold)
+            if (currentUpdateIndex < upgrades.Length)
             {
+                scoreGaugeHelper += _increasingValue;
+
                 var _upgrade = upgrades[currentUpdateIndex];
-                player.UpgradePlayer(_upgrade.Upgrade, _upgrade.IncreasingValue);
+                float _ratio = Mathf.Min(1f, (float)scoreGaugeHelper / _upgrade.ScoreThreshold);
 
-                currentUpdateIndex++;
+                if (scoreGaugeHelper >= _upgrade.ScoreThreshold)
+                {
+                    player.UpgradePlayer(_upgrade.Upgrade, _upgrade.IncreasingValue);
+
+                    if (gauge.UpdateScoreUI(_ratio, _upgrade.FillColor))
+                    {
+                        scoreGaugeHelper -= _upgrade.ScoreThreshold;
+                        currentUpdateIndex++;
+                    }
+                }
+                else
+                {
+                    gauge.UpdateScoreUI(_ratio, _upgrade.FillColor);
+                }
             }
-
-            gauge.UpdateScoreUI(_ratio);
         }
 
         public void UpdateScore()
@@ -193,6 +206,18 @@ namespace Shmup
             multiplierSequence.Join(_flash);
         }
 
+        public void ResetCombo()
+        {
+            scoreMultiplierHelper = score;
+            IncreaseMultiplier(1f);
+
+            currentUpdateIndex = 0;
+            scoreGaugeHelper = 0;
+            gauge.ResetCombo();
+
+            // Remove Player bonus.
+        }
+
         public void ResetScore()
         {
             if (scoreSequence.IsActive())
@@ -211,6 +236,8 @@ namespace Shmup
             lastScore = 0;
             scoreMultiplierHelper = 0;
             multiplierValue = 0f;
+
+            currentUpdateIndex = 0;
 
             gauge.ResetGauge();
         }
