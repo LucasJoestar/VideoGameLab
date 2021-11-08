@@ -13,6 +13,7 @@ namespace Shmup
     {
         #region Fields and Properties
         [SerializeField] private int score = 100;
+        [SerializeField] private WeaponDropper dropper = null;
         #endregion
 
         #region Methods
@@ -36,7 +37,8 @@ namespace Shmup
             base.OnDestroyed();
 
             // Increment score.
-            ScoreManager.Instance.IncreaseScore(score); 
+            ScoreManager.Instance.IncreaseScore(score);
+            dropper.Drop();
         }
         #endregion
     }

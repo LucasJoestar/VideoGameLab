@@ -12,16 +12,15 @@ namespace Shmup
         #endregion
 
         #region Methods
-        public void SetWeapons(WeaponsData _data)
+        public void SetWeapons(WeaponsData _data, Sprite _weaponSprite, int _ammo)
         {
             weaponsData = _data;
-            weaponRenderer.sprite = _data.WeaponSprite;
-            remainingUses = _data.Ammo;
+            weaponRenderer.sprite = _weaponSprite;
+            remainingUses = _ammo;
             enabled = false;
             enabled = true;
         }
         #endregion
-
     }
 
 }

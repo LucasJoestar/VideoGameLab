@@ -19,7 +19,7 @@ namespace Shmup
 
         [Header("Weapons")]
         [SerializeField] private PlayerWeapons mainWeapons = null;
-        [SerializeField] private Weapons secondaryWeapon = null;
+        [SerializeField] private StolenWeapons secondaryWeapon = null;
         [SerializeField] private Bomb bomb = null;
 
         [Space(5f)]
@@ -83,12 +83,19 @@ namespace Shmup
                 RaycastHit _hit = castBuffer[_i];
                 if (_hit.collider.isTrigger)
                 {
+                    if(_hit.collider.TryGetComponent<DropableWeapon>(out DropableWeapon _weapon))
+                    {
+                        secondaryWeapon.SetWeapons(_weapon.WeaponData, _weapon.WeaponSprite, _weapon.Ammo);
+                        ScoreManager.Instance.IncreaseScore(_weapon.Score);
+                        _weapon.gameObject.SetActive(false);
+                        return;
+                    }
                     // Every trigger is a hit.
                     if (collider.enabled)
                     {
                         damageable.TakeDamages(1);
                         return;
-                    }                    
+                    }             
                 }
                 else
                 {

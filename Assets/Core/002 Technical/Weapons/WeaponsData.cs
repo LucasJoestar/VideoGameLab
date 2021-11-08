@@ -23,13 +23,7 @@ namespace Shmup
 
         public int Damages => damages;
         public float FireRateTime { get { return 1 / fireRate; }}
-
-        [Header("Player")]
-        [SerializeField] private Sprite weaponSprite = null;
-        public Sprite WeaponSprite => weaponSprite;
-        [SerializeField] private int ammo = 10;
-        public int Ammo => ammo;
-
+        
         public Pool<PoolableParticle> Pool = new Pool<PoolableParticle>(2);
 
         public PoolableParticle GetInstance()
