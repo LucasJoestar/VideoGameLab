@@ -116,6 +116,7 @@ namespace Shmup
         private void Awake()
         {
             Instance = this;
+            menus.gameObject.SetActive(true);
         }
 
         private void OnApplicationFocus(bool focus)

@@ -83,7 +83,7 @@ MonoBehaviour:
   - {fileID: 5433295474462487399}
   disabledComponents:
   - {fileID: 9152729037625088968}
-  maxHealth: 1
+  maxHealth: 500
   health: -180
   explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
   explosionClips:

@@ -5,6 +5,7 @@
 // ================================================================================== //
 
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 namespace Shmup
@@ -18,6 +19,9 @@ namespace Shmup
         #region Methods
         protected override void OnTakeDamages()
         {
+            if (!Array.Exists(sprites, s => s.isVisible))
+                return;
+
             base.OnTakeDamages();
 
             // Blinking
