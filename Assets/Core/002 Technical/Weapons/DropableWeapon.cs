@@ -2,12 +2,14 @@ using UnityEngine;
 
 namespace Shmup
 {
-    public class DropableWeapon : MonoBehaviour , IPoolable<DropableWeapon>
+    public class DropableWeapon : MonoBehaviour, IPoolable<DropableWeapon>
     {
-        public WeaponsData WeaponData = null;
-        public Sprite WeaponSprite = null;
-        public int Ammo = 10;
-        public int Score = 100;
+        [SerializeField] private new SpriteRenderer renderer = null;
+        public SpriteRenderer Renderer => renderer;
+        public WeaponsData WeaponData { get; set; } = null;
+        public Sprite WeaponSprite { get; set; } = null;
+        public int Ammo { get; set; } = 10;
+        public int Score { get; set; } = 100;
 
         #region Pool
         private Pool<DropableWeapon> pool = null;

@@ -54,6 +54,11 @@ namespace Shmup
 
         protected virtual void OnEnable()
         {
+            if (weaponsData == null)
+            {
+                enabled = false;
+                return;
+            }
             for (int _i = 0; _i < weaponsAnchor.Length; _i++)
             {
                 var _instance = weaponsData.GetInstance();

@@ -59,10 +59,13 @@ namespace Shmup
 
         protected virtual void OnDestroyed()
         {
-            // Emit explosion vfx
-            var _explosion = explosionPool.GetFromPool(explosion);
-            _explosion.transform.position = transform.position;
-            SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0, explosionClips.Length)], transform.position);
+            if(explosionClips.Length > 0)
+            {
+                // Emit explosion vfx
+                var _explosion = explosionPool.GetFromPool(explosion);
+                _explosion.transform.position = transform.position;
+                SoundManager.Instance.PlayClipAtPosition(explosionClips[Random.Range(0, explosionClips.Length)], transform.position);
+            }
 
             gameObject.SetActive(false);
 

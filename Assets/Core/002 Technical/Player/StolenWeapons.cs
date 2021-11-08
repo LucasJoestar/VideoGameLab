@@ -14,10 +14,10 @@ namespace Shmup
         #region Methods
         public void SetWeapons(WeaponsData _data, Sprite _weaponSprite, int _ammo)
         {
+            enabled = false;
             weaponsData = _data;
             weaponRenderer.sprite = _weaponSprite;
             remainingUses = _ammo;
-            enabled = false;
             enabled = true;
         }
         #endregion

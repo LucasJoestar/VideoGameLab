@@ -22,13 +22,14 @@ namespace Shmup
         #region Methods
         public void Drop()
         {
-            if (Random.value > dropProbability)
+            if (Random.value <= dropProbability)
             {
                 DropableWeapon _droppedWeapon = droppableWeapons.GetFromPool(dropablePrefab);
                 _droppedWeapon.WeaponData = weaponData;
                 _droppedWeapon.WeaponSprite = weaponSprite;
                 _droppedWeapon.Ammo = ammo;
                 _droppedWeapon.Score = score;
+                _droppedWeapon.Renderer.sprite = weaponSprite;
                 _droppedWeapon.transform.position = transform.position;
             }
         }
