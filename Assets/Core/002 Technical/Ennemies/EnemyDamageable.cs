@@ -18,13 +18,14 @@ namespace Shmup
         #endregion
 
         #region Methods
+       
         protected override void OnTakeDamages()
         {
             if (!Array.Exists(sprites, s => s.isVisible))
                 return;
 
             base.OnTakeDamages();
-
+            
             // Blinking
             if (!sequence.IsActive())
             {
@@ -35,14 +36,14 @@ namespace Shmup
                 }
             }
         }
-
+        
         protected override void OnDestroyed()
         {
             base.OnDestroyed();
 
             // Increment score.
             ScoreManager.Instance.IncreaseScore(score);
-            dropper.Drop();
+            if(dropper) dropper.Drop();
         }
         #endregion
     }

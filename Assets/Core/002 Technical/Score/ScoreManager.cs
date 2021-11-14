@@ -209,7 +209,7 @@ namespace Shmup
         public void ResetCombo()
         {
             scoreMultiplierHelper = score;
-            IncreaseMultiplier(1f);
+            IncreaseMultiplier(1.0f);
 
             currentUpdateIndex = 0;
             scoreGaugeHelper = 0;
@@ -235,7 +235,7 @@ namespace Shmup
             score = 0;
             lastScore = 0;
             scoreMultiplierHelper = 0;
-            multiplierValue = 0f;
+            multiplierValue = 1.0f;
 
             currentUpdateIndex = 0;
 

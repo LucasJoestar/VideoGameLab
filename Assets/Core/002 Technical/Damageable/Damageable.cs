@@ -15,7 +15,6 @@ namespace Shmup
         [Header("REFERENCES")]
 
         [SerializeField] protected SpriteRenderer[] sprites = new SpriteRenderer[] { };
-        [SerializeField] protected MonoBehaviour[] disabledComponents = new MonoBehaviour[] { };
 
         [Header("HEALTH")]
 
@@ -68,11 +67,6 @@ namespace Shmup
             }
 
             gameObject.SetActive(false);
-
-            for (int i = 0; i < disabledComponents.Length; i++)
-            {
-                disabledComponents[i].enabled = false;
-            }
         }
         #endregion
 

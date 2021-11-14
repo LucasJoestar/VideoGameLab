@@ -52,7 +52,7 @@ namespace Shmup
 
             if (attributes.FireBombInput.triggered)
             {
-                bomb.Fire();
+                bomb.FireBomb();
             }
         }
         #endregion

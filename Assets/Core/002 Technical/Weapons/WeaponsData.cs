@@ -23,6 +23,7 @@ namespace Shmup
 
         public int Damages => damages;
         public float FireRateTime { get { return 1 / fireRate; }}
+        public float FireRate { get { return 0; /*projectiles.MainParticles.emission.rateOverTime; */ } }
         
         public Pool<PoolableParticle> Pool = new Pool<PoolableParticle>(2);
 

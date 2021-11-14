@@ -28,7 +28,9 @@ namespace Shmup
         {
             IsInPool = true;
         }
+        #endregion
 
+        #region Methods
         private void OnDisable()
         {
             if (!IsInPool)

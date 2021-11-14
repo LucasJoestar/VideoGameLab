@@ -8,19 +8,9 @@ namespace Shmup
         #region Fields and Properties
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
-
-        private float baseFireRate = 1.0f;
-        private float baseProjectileSize = 1.0f;
         #endregion
 
         #region Methods
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-            baseFireRate = 1.0f;
-            baseProjectileSize = 1.0f;     
-        }
-
         public override void Fire()
         {
             if (useAutoFire)
@@ -51,7 +41,7 @@ namespace Shmup
                 autoFireSequence.Kill();
             }
             autoFireSequence = DOTween.Sequence();
-            autoFireSequence.AppendInterval(weaponsData.FireRateTime / baseFireRate);
+            autoFireSequence.AppendInterval(weaponsData.FireRateTime / 1);
             autoFireSequence.OnComplete(AutoFire);
             autoFireSequence.Play();
         }
@@ -61,7 +51,7 @@ namespace Shmup
             for (int i = 0; i < systems.Length; i++)
             {
                 ParticleSystem.EmissionModule _emissionModule = systems[i].MainParticles.emission;
-                _emissionModule.rateOverTimeMultiplier = baseFireRate * _multiplier; 
+                _emissionModule.rateOverTimeMultiplier = _multiplier; 
             }
         }
 
@@ -70,7 +60,7 @@ namespace Shmup
             for (int i = 0; i < systems.Length; i++)
             {
                 ParticleSystem.MainModule _emissionModule = systems[i].MainParticles.main;
-                _emissionModule.startSizeMultiplier = baseProjectileSize * _multiplier;
+                _emissionModule.startSizeMultiplier = _multiplier;
             }
         }
         #endregion

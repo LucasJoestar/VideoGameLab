@@ -59,20 +59,23 @@ namespace Shmup
                 enabled = false;
                 return;
             }
-            for (int _i = 0; _i < weaponsAnchor.Length; _i++)
+            else
             {
-                var _instance = weaponsData.GetInstance();
-                Transform _parent = weaponsAnchor[_i];
+                for (int _i = 0; _i < weaponsAnchor.Length; _i++)
+                {
+                    var _instance = weaponsData.GetInstance();
+                    Transform _parent = weaponsAnchor[_i];
 
-                _instance.transform.position = weaponsAnchor[_i].transform.position;
-                _instance.transform.rotation = weaponsAnchor[_i].transform.rotation;
+                    _instance.transform.position = weaponsAnchor[_i].transform.position;
+                    _instance.transform.rotation = weaponsAnchor[_i].transform.rotation;
 
-                systems[_i] = _instance;
+                    systems[_i] = _instance;
 
-                ParticleSystem.CollisionModule _module = systems[_i].MainParticles.collision;
-                _module.collidesWith = targetMask;
+                    ParticleSystem.CollisionModule _module = systems[_i].MainParticles.collision;
+                    _module.collidesWith = targetMask;
+                }
+                weaponsAreReady = true;
             }
-            weaponsAreReady = true;
         }
 
         private void Update()
@@ -89,10 +92,17 @@ namespace Shmup
             {
                 for (int _i = 0; _i < systems.Length; _i++)
                 {
-                    if ((systems[_i] != null) && systems[_i].MainParticles.isEmitting)
+                    if ((systems[_i] != null))
                     {
-                        systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                        systems[_i].SendToPoolOnInvisible = true;
+                        if (systems[_i].MainParticles.isEmitting)
+                        {
+                            systems[_i].MainParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                            systems[_i].SendToPoolOnInvisible = true;
+                        }
+                        else
+                        {
+                            systems[_i].gameObject.SetActive(false);
+                        }
                     }
                 }
                 weaponsAreReady = false;

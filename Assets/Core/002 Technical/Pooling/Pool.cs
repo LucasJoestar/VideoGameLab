@@ -95,7 +95,6 @@ namespace Shmup
 
             _instance.gameObject.SetActive(true);
             _instance.OnGetFromPool();
-
             return _instance;
         }
 

@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &130298467
 Transform:
   m_ObjectHideFlags: 0
@@ -479,6 +479,26 @@ PrefabInstance:
     m_TransformParent: {fileID: 1718319893}
     m_Modifications:
     - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: dropper
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: blinkDuration
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: explosionClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: explosionClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d8b44746b060864c9129cb52bd2cb29, type: 3}
+    - target: {fileID: 3230633266759150424, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
       propertyPath: OnSpawn.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1402564146}
@@ -486,6 +506,14 @@ PrefabInstance:
       propertyPath: OnDestroy.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1402564146}
+    - target: {fileID: 6039473644221864091, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6039473644221864092, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7982824956798259344, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -538,7 +566,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6103570443000042065, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
+    - {fileID: 4340711475016509106, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d2c15625533b2142b8294dc5c940136, type: 3}
 --- !u!4 &498682169 stripped
 Transform:
@@ -1006,6 +1036,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1867493140}
     m_Modifications:
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: damages
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2570395333086081920, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
+      propertyPath: flashImage
+      value: 
+      objectReference: {fileID: 1783711171}
     - target: {fileID: 8528006561433980540, guid: 39781e14fab93ef4fa67d568ed97d602, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1686,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1718319893
 Transform:
   m_ObjectHideFlags: 0
@@ -1706,6 +1744,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783711171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 934174891, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
+  m_PrefabInstance: {fileID: 1824812808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1824812808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1801,6 +1850,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 912208974}
+    - target: {fileID: 5278520174009442764, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
+      propertyPath: multiplierTreshold
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7231395179161042152, guid: acc8e6a9e56885547bd36ed0ab306e10, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -80.12277

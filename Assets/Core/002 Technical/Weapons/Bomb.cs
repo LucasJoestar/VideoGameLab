@@ -10,9 +10,10 @@ using DG.Tweening;
 
 namespace Shmup
 {
-    public class Bomb : Weapons
+    public class Bomb : MonoBehaviour
     {
         #region Fields and properties
+        [SerializeField] private int damages = 100;
         [SerializeField, Range(.01f, 1.0f)] private float waitingDelay = 0.05f;
         [SerializeField] private Image flashImage = null;
         [SerializeField] private AnimationCurve flashCurve = new AnimationCurve();
@@ -21,7 +22,7 @@ namespace Shmup
         #endregion
 
         #region Methods
-        public override void Fire()
+        public void FireBomb()
         {
             if(flashSequence.IsActive())
             {
@@ -33,7 +34,7 @@ namespace Shmup
 
             for (int i = 0; i < EnemyController.enemies.Count; i++)
             {
-                EnemyController.enemies[i].ApplyBombBehaviour(waitingDelay * i, weaponsData.Damages);
+                EnemyController.enemies[i].ApplyBombBehaviour(waitingDelay * i, damages);
             }
         }
         #endregion

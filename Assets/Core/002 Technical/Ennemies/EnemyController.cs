@@ -54,10 +54,10 @@ namespace Shmup
         private void OnEnable()
         {
             enemies.Add(this);
-            if (Application.isPlaying)
-            {
-                Activate();
-            }
+            // if (Application.isPlaying)
+            // {
+            //     Activate();
+            // }
         }
 
         private void OnBecameVisible()
