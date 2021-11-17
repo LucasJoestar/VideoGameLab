@@ -19,13 +19,17 @@ namespace Shmup
 
         [Header("Weapons")]
         [SerializeField] private PlayerWeapons mainWeapons = null;
-        [SerializeField] private StolenWeapons secondaryWeapon = null;
+        [SerializeField] private SecondaryWeapons secondaryWeapon = null;
         [SerializeField] private Bomb bomb = null;
 
         [Space(5f)]
-
+        [Header("Weapons")]
         [SerializeField] private PlayerDamageable damageable = null;
         [SerializeField] private LayerMask collisionMask = new LayerMask();
+
+        [Space(5f)]
+        [Header("HUD")]
+        [SerializeField] private PlayerHUD playerHUD = null;
         #endregion
 
         #region Inputs
@@ -35,7 +39,7 @@ namespace Shmup
             Vector2 _movement = attributes.MoveInput.ReadValue<Vector2>();
             if (_movement != Vector2.zero)
             {
-                _movement *= attributes.Speed * Time.smoothDeltaTime;
+                _movement *= attributes.Speed * Time.smoothDeltaTime * (mainWeapons.IsAutoFiring ? attributes.FiringSpeedMultiplier : 1.0f);
                 Move(_movement);
             }
 
@@ -47,12 +51,24 @@ namespace Shmup
 
             if (attributes.FireSecondaryInput.triggered)
             {
-                secondaryWeapon.Fire();
+                if (secondaryWeapon.Fire())
+                {
+                    playerHUD.SecondaryWeaponsAmmo.text = secondaryWeapon.RemainingUses.ToString();
+                    if (secondaryWeapon.RemainingUses <= 0)
+                    {
+                        playerHUD.SecondaryWeaponsIcon.sprite = null;
+                        playerHUD.SecondaryWeaponsIcon.enabled = false;
+
+                    }
+                }
             }
 
             if (attributes.FireBombInput.triggered)
             {
-                bomb.FireBomb();
+                if(bomb.FireBomb())
+                {
+                    playerHUD.BombAmmo.text = bomb.RemainingUses.ToString();
+                }
             }
         }
         #endregion
@@ -87,6 +103,9 @@ namespace Shmup
                     {
                         secondaryWeapon.SetWeapons(_weapon.WeaponData, _weapon.WeaponSprite, _weapon.Ammo);
                         ScoreManager.Instance.IncreaseScore(_weapon.Score);
+                        playerHUD.SecondaryWeaponsIcon.sprite = _weapon.WeaponSprite;
+                        playerHUD.SecondaryWeaponsIcon.enabled = true;
+                        playerHUD.SecondaryWeaponsAmmo.text = secondaryWeapon.RemainingUses.ToString();
                         _weapon.gameObject.SetActive(false);
                         return;
                     }
@@ -154,14 +173,12 @@ namespace Shmup
                 case PlayerUpgradeType.IncreaseProjectileSize:
                     mainWeapons.IncreaseProjectileSize(_value);
                     break;
+                case PlayerUpgradeType.Bomb:
+                    bomb.RemainingUses++;
+                    break;
                 default:
                     break;
             }
-        }
-
-        public void SetSecondaryWeapon(WeaponsData _data, Sprite _weaponSprite)
-        {
-            // secondaryWeapon.SetWeapons(_data);
         }
         #endregion
 

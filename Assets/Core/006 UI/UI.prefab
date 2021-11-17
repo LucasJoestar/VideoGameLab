@@ -260,6 +260,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7784731709050044420}
     m_Modifications:
+    - target: {fileID: 1131541921217656107, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366122296703612750, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366122296703612750, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366122296703612750, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366122296703612750, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010946679581722876, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3767920193205386198, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -348,13 +372,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: AMMO
       objectReference: {fileID: 0}
+    - target: {fileID: 5541542898497109213, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+--- !u!1 &2026989074479016926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3767920193205386199, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+  m_PrefabInstance: {fileID: 2912448664631529481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2026989074479016927 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3767920193205386198, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
   m_PrefabInstance: {fileID: 2912448664631529481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4223928247402768199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1366122296703612750, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+  m_PrefabInstance: {fileID: 2912448664631529481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &117674872727935221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3010946679581722876, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+  m_PrefabInstance: {fileID: 2912448664631529481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1630535768464026771 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4524933474187066522, guid: adaffe5e37f32b54d955e3fe1d66c489, type: 3}
+  m_PrefabInstance: {fileID: 2912448664631529481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2174443662203190228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026989074479016926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816e08c5378ba174fab01ef2ce2f937f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondaryWeaponsIcon: {fileID: 4223928247402768199}
+  secondaryWeaponsAmmo: {fileID: 117674872727935221}
+  bombAmmo: {fileID: 1630535768464026771}
 --- !u!1001 &4288364155492101191
 PrefabInstance:
   m_ObjectHideFlags: 0

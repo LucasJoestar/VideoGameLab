@@ -19,11 +19,17 @@ namespace Shmup
         [SerializeField] private AnimationCurve flashCurve = new AnimationCurve();
         [SerializeField] private float flashDuration = 1.0f;
         private Sequence flashSequence = null;
+
+        public int RemainingUses { get; set; } = 1;
         #endregion
 
         #region Methods
-        public void FireBomb()
+        public bool FireBomb()
         {
+            if(RemainingUses <= 0)
+            {
+                return false;
+            }
             if(flashSequence.IsActive())
             {
                 flashSequence.Kill();
@@ -36,6 +42,8 @@ namespace Shmup
             {
                 EnemyController.enemies[i].ApplyBombBehaviour(waitingDelay * i, damages);
             }
+            RemainingUses--;
+            return true;
         }
         #endregion
     }

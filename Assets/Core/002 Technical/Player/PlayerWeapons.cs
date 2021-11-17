@@ -8,10 +8,12 @@ namespace Shmup
         #region Fields and Properties
         [SerializeField] private bool useAutoFire = false;
         private bool isAutoFiring = false;
+        public bool IsAutoFiring => isAutoFiring;
+        [SerializeField] private float fireRateMultiplier = 1.0f;
         #endregion
 
         #region Methods
-        public override void Fire()
+        public override bool Fire()
         {
             if (useAutoFire)
             {
@@ -28,8 +30,9 @@ namespace Shmup
                     }
                     
                 }
+                return false;
             }
-            else base.Fire();
+            else return base.Fire();
         }
 
         private Sequence autoFireSequence; 
@@ -41,28 +44,23 @@ namespace Shmup
                 autoFireSequence.Kill();
             }
             autoFireSequence = DOTween.Sequence();
-            autoFireSequence.AppendInterval(weaponsData.FireRateTime / 1);
+            autoFireSequence.AppendInterval(weaponsData.FireRateTime / fireRateMultiplier);
             autoFireSequence.OnComplete(AutoFire);
             autoFireSequence.Play();
         }
 
-        public void IncreaseFireRate(float _multiplier)
-        {
-            for (int i = 0; i < systems.Length; i++)
-            {
-                ParticleSystem.EmissionModule _emissionModule = systems[i].MainParticles.emission;
-                _emissionModule.rateOverTimeMultiplier = _multiplier; 
-            }
-        }
+        public void IncreaseFireRate(float _multiplier) => fireRateMultiplier = _multiplier;
 
         public void IncreaseProjectileSize(float _multiplier)
         {
-            for (int i = 0; i < systems.Length; i++)
-            {
-                ParticleSystem.MainModule _emissionModule = systems[i].MainParticles.main;
-                _emissionModule.startSizeMultiplier = _multiplier;
-            }
+           
         }
         #endregion
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            fireRateMultiplier = 1.0f;
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace Shmup
         [Space(10f), Header("SPEED")]
 
         [Range(1f, 100f)] public float Speed = 5f;
+        [Range(.1f, 1.0f)] public float FiringSpeedMultiplier = .75f;
 
         [Space(10f), Header("INPUTS")]
 

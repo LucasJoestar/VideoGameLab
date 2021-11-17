@@ -18,11 +18,11 @@ namespace Shmup
         protected PoolableParticle[] systems = new PoolableParticle[] { };
 
         public WeaponsData WeaponsData => weaponsData;
-        private bool weaponsAreReady = false;
+        protected bool weaponsAreReady = false;
         #endregion
 
         #region Methods
-        public virtual void Fire()
+        public virtual bool Fire()
         {
             if(weaponsAreReady)
             {
@@ -31,7 +31,9 @@ namespace Shmup
                 {
                     systems[_i].MainParticles.Play(true);
                 }
+                return true;
             }
+            return false;
         }
 
         public virtual void CancelFire()

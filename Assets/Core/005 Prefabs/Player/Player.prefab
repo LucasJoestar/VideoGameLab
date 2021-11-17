@@ -14454,7 +14454,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2356426971507562833}
-  - component: {fileID: 6511910839741991937}
+  - component: {fileID: 5624661204423085759}
   m_Layer: 8
   m_Name: Secondary Weapon
   m_TagString: Untagged
@@ -14477,7 +14477,7 @@ Transform:
   m_Father: {fileID: 8528006561433980540}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6511910839741991937
+--- !u!114 &5624661204423085759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14486,7 +14486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 618741883820608931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7d97c4d118431747a0709576f96498a, type: 3}
+  m_Script: {fileID: 11500000, guid: ce5710915a4ab324f980bed3aaef13bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weaponsData: {fileID: 0}
@@ -14794,10 +14794,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 8528006561433980543}
-  disabledComponents:
-  - {fileID: 2686530028997403946}
-  - {fileID: 6511910839741991937}
-  - {fileID: 2570395333086081920}
   maxHealth: 1
   health: 1
   explosion: {fileID: 4226305768766853824, guid: 38412cf68f8502f4aa36308fb8ebe92c, type: 3}
@@ -14824,7 +14820,7 @@ MonoBehaviour:
   rigidbody: {fileID: 8528006561433980541}
   collider: {fileID: 8528006561433980514}
   mainWeapons: {fileID: 2686530028997403946}
-  secondaryWeapon: {fileID: 6511910839741991937}
+  secondaryWeapon: {fileID: 5624661204423085759}
   bomb: {fileID: 2570395333086081920}
   damageable: {fileID: 7019414584344825113}
   collisionMask:

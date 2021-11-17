@@ -15,7 +15,8 @@ namespace Shmup
     {
         Shield,
         IncreaseFireRate,
-        IncreaseProjectileSize
+        IncreaseProjectileSize,
+        Bomb
     }
 
     [Serializable]

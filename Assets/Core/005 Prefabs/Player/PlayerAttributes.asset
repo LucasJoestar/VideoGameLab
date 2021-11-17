@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c644033eb33c12347b5a6716635cea34, type: 3}
   m_Name: PlayerAttributes
   m_EditorClassIdentifier: 
-  Speed: 7
+  Speed: 6
   MoveInput:
     m_Name: Move Input
     m_Type: 0

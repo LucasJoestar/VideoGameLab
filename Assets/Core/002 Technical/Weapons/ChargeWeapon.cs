@@ -15,7 +15,7 @@ namespace Shmup
         #endregion
 
         #region Methods
-        public override void Fire()
+        public override bool Fire()
         {
             if (chargingSequence.IsActive())
                 chargingSequence.Kill();
@@ -27,6 +27,7 @@ namespace Shmup
             chargingSequence.Append(CameraAspectRatio.Instance.transform.DOShakePosition(chargeData.ShakeDuration));
             chargingSequence.Append(transform.DOLocalMoveY(_origin, _dist / chargeData.ReturnSpeed));
             chargingSequence.Play();
+            return false;
         }
 
         public override void CancelFire()
